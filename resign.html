@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+   <link rel="stylesheet" href="css/bootstrap.css"/>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="css/base.css"/>
+   <link rel="stylesheet" href="css/resign.css"/>
+   <title></title>
+</head>
+<body>
+<div class="container-fluid">
+   <div class="resign_bg"></div>
+   <div class="resign_content d-flex flex-column justify-content-start">
+      <!-- 注册logo-->
+      <h1 class="resign_logo text-center">
+         <img src="img/login/login_logo.png" alt=""/>
+      </h1>
+      <!-- 注册信息-->
+      <div class="resign_input">
+         <div class="resign_txt d-flex flex-column justify-content-between text-center">
+            <h1>创建账号</h1>
+            <a class="selectButton redButton w-100" href="##">网易</a>
+            <div class="resign_line">————————————————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—————————————————
+            </div>
+            <p class="text-left">创建暴雪游戏通行证，开启您的冒险旅程。</p>
+         </div>
+         <ul class="resign_input_ul list-unstyled d-flex flex-column justify-content-between text-center">
+            <li><input class="w-100 h-100" type="text" placeholder="身份证号码"/></li>
+            <li><input class="w-100 h-100" type="text" placeholder="姓名"/></li>
+            <li><input class="w-100 h-100" type="email" placeholder="电子邮箱"/></li>
+            <li><input class="w-100 h-100" type="password" placeholder="密码"/></li>
+            <li class="row">
+               <input id="input86" class="col-2 h-100 text-center" type="text" placeholder="+86" disabled="disabled"/>
+               <input class="col-10 h-100" type="text" placeholder="手机号码"/>
+            </li>
+            <li class="d-flex justify-content-between">
+               <input class="yanzhen1 h-100 text-center" type="text" placeholder="验证码"/>
+               <a href="##" class="yanzhen2 bgDarkButton">获取验证码</a>
+            </li>
+            <li class="text-white text-left">
+               <a class="bgDarkButton smallcheck" href="##"><span class="showAgree">✔</span></a> 我已阅读并接受
+               <a class="blue_href" href="##">隐私政策</a>。
+            </li>
+            <li>
+               <a class="selectButton w-100 h-100" href="##">免费注册暴雪游戏通行证</a>
+            </li>
+            <li>
+               <a class="bgDarkButton w-100 h-100" href="##">已经有通行证了？</a>
+            </li>
+            <li class="text-white text-left">
+               点击“免费注册暴雪游戏通行证”即表示我同意并接受
+               <a class="blue_href" href="##">暴雪战网最终用户许可协议</a>
+            </li>
+         </ul>
+      </div>
+
+      <script>
+         $(".smallcheck").click(function(){
+            $(".showAgree").toggle();
+         })
+      </script>
+
+      <!-- 注册底部-->
+      <div class="resign_footer">
+         <h1>
+            <img src="img/login/login_logo.png" alt=""/>
+         </h1>
+         <ul class="list-unstyled d-flex flex-column justify-content-between text-center">
+            <li class="footer_first_li">
+               <a class="grayTitle" href="">工作机会&nbsp; &nbsp;</a>|
+               <a class="grayTitle" href="##"> &nbsp;&nbsp;关于&nbsp;&nbsp; </a>|
+               <a class="grayTitle" href="##"> &nbsp;&nbsp;支持&nbsp;&nbsp; </a>
+               <span class="shushow">|</span>
+               <br class="brshow"/>
+               <a class="grayTitle" href="##"> &nbsp;&nbsp;媒体中心&nbsp;&nbsp;</a>|
+               <a class="grayTitle" href="##"> &nbsp;&nbsp;API&nbsp;&nbsp;</a>|
+               <a class="grayTitle" href="##"> &nbsp;&nbsp;安全中心&nbsp;</a>
+            </li>
+            <li class="resign_line">
+               &copy;2018暴雪娱乐有限公司版权所有。<br/>
+               由上海网之易网络科技发展有限公司运营。<br/>
+               <a class="grayTitle" href="##"> &nbsp;隐私&nbsp;</a>|
+               <a class="grayTitle" href="##"> &nbsp;法律条款&nbsp;</a>
+            </li>
+            <li>
+               <a class="grayTxt" href="">沪网文〔2017〕9633-727号 &nbsp;</a>
+               <br class="brshow2"/><span class="shushow2">|</span>
+               <a class="grayTxt" href="##"> &nbsp;增值电信业务经营许可证编号：沪B2－20080012&nbsp; </a> <br/>
+               互联网违法和不良信息举报电话：0571-28090163 &nbsp;
+               <br class="brshow2"/><span class="shushow2">|</span>
+               &nbsp;沪公网安备：31011502002167 <br/>
+               <a class="grayTitle" href="">&nbsp; 适龄提示：适合13岁及以上使用 家长监护工程&gt;&nbsp; </a>
+               <br class="brshow2"/><span class="shushow2">|</span>
+               <a class="grayTitle" href="##">&nbsp; 上海市网络游戏行业自律公约&nbsp; </a><br/>
+               上海市张江高科技园区碧波路690号5号楼301-A &nbsp;
+               <br class="brshow2"/><span class="shushow2">|</span>
+               &nbsp;客服电话：0571-28090163
+            </li>
+            <li>
+               <img src="img/login/login_footer1.gif" alt=""/>&nbsp;&nbsp;&nbsp;
+               <img src="img/login/login_footer2.gif" alt=""/>&nbsp;&nbsp;&nbsp;
+               <img src="img/login/login_footer3.gif" alt=""/>&nbsp;&nbsp;&nbsp;
+               <img src="img/login/login_footer4.gif" alt=""/>&nbsp;&nbsp;&nbsp;
+               <img class="login_footer_smimg" src="img/login/login_footer5.gif" alt=""/>
+            </li>
+            <li class="resign_line">健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当<br/>适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活 </li>
+         </ul>
+      </div>
+
+      <!-- width为768时的footer-->
+      <!--<div class="resign_smallfooter">-->
+         <!--<h1>-->
+            <!--<img src="img/login/login_logo.png" alt=""/>-->
+         <!--</h1>-->
+         <!--<ul class="list-unstyled d-flex flex-column justify-content-between text-center">-->
+            <!--<li class="footer_first_li">-->
+               <!--<a class="grayTitle" href="">工作机会&nbsp; &nbsp;</a>|-->
+               <!--<a class="grayTitle" href="##"> &nbsp;&nbsp;关于&nbsp;&nbsp; </a>|-->
+               <!--<a class="grayTitle" href="##"> &nbsp;&nbsp;支持&nbsp;&nbsp; </a> <br/>-->
+               <!--<a class="grayTitle" href="##"> &nbsp;&nbsp;媒体中心&nbsp;&nbsp;</a>|-->
+               <!--<a class="grayTitle" href="##"> &nbsp;&nbsp;API&nbsp;&nbsp;</a>|-->
+               <!--<a class="grayTitle" href="##"> &nbsp;&nbsp;安全中心&nbsp;</a>-->
+            <!--</li>-->
+            <!--<li class="resign_line">-->
+               <!--&copy;2018暴雪娱乐有限公司版权所有。<br/>-->
+               <!--由上海网之易网络科技发展有限公司运营。<br/>-->
+               <!--<a class="grayTitle" href="##"> &nbsp;隐私&nbsp;</a>|-->
+               <!--<a class="grayTitle" href="##"> &nbsp;法律条款&nbsp;</a>-->
+            <!--</li>-->
+            <!--<li>-->
+               <!--<a class="grayTxt" href="">沪网文〔2017〕9633-727号 &nbsp;</a>|-->
+               <!--<a class="grayTxt" href="##"> &nbsp;增值电信业务经营许可证编号：沪B2－20080012&nbsp; </a> <br/>-->
+               <!--互联网违法和不良信息举报电话：0571-28090163 &nbsp;|-->
+               <!--&nbsp;沪公网安备：31011502002167 <br/>-->
+               <!--<a class="grayTitle" href="">&nbsp; 适龄提示：适合13岁及以上使用 家长监护工程&gt;&nbsp; </a>|-->
+               <!--<a class="grayTitle" href="##">&nbsp; 上海市网络游戏行业自律公约&nbsp; </a><br/>-->
+               <!--上海市张江高科技园区碧波路690号5号楼301-A &nbsp;|-->
+               <!--&nbsp;客服电话：0571-28090163-->
+            <!--</li>-->
+            <!--<li>-->
+               <!--<img src="img/login/login_footer1.gif" alt=""/>&nbsp;&nbsp;&nbsp;-->
+               <!--<img src="img/login/login_footer2.gif" alt=""/>&nbsp;&nbsp;&nbsp;-->
+               <!--<img src="img/login/login_footer3.gif" alt=""/>&nbsp;&nbsp;&nbsp;-->
+               <!--<img src="img/login/login_footer4.gif" alt=""/>&nbsp;&nbsp;&nbsp;-->
+               <!--<img class="login_footer_smimg" src="img/login/login_footer5.gif" alt=""/>-->
+            <!--</li>-->
+            <!--<li class="resign_line">-->
+               <!--健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 <br/>-->
+               <!--适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活-->
+            <!--</li>-->
+         <!--</ul>-->
+      <!--</div>-->
+
+
+   </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,820 @@
+<header id="header" class="container-fluid">
+    <table></table>
+    <!-- 遮罩层-->
+    <div class="contentZheZhao" id="#top"></div>
+    <!--头部-->
+    <!-- 1.1顶部导航栏-->
+    <nav class="navbar navbar-expand-sm my_header_nav">
+
+        <!-- 1.1.2导航栏左边部分内容-->
+        <div class="my_header_1 col-lg-7 col-sm-8 headerLeft">
+            <ul class="navbar-nav my_header_text m-0">
+                <li class="nav-item my_header_1 pr-0">
+                    <a href="#">
+                        <img class="my_nav_img" src="img/header/logo_small.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item pl-3"><a class="nav-link" href="#">商城</a></li>
+            </ul>
+        </div>
+
+        <!-- 1.1.3导航栏右边注册内容-->
+        <div class="my_header_1 col-lg-5 col-sm-3 headerRight">
+            <ul class="navbar-nav justify-content-end my_header_text m-0">
+                <li class="nav-item"><a class="nav-link" href="#">支持</a></li>
+                <li class="nav-item right_select_big">
+                    <a class="nav-link" href="#">
+                        我的账户
+                        <img src="img/header/jiantou2.png" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 右边下拉菜单-->
+        <div class="header_right_select">
+            <ul class="list-unstyled">
+                <li class="my_nav_selectRight_risign"><a class="selectButton select_button_right" href="login.html" target="_blank">登录</a></li>
+                <li><a class="grayTitle" href="login.html">账户</a></li>
+                <li><a class="grayTitle" href="resign.html">免费注册</a></li>
+            </ul>
+        </div>
+
+        <script>
+            $(".right_select_big").click(function(){
+                if($(".header_right_select").is(":hidden")){
+                    $(".header_right_select").show(300);
+                    $(".right_select_big>a>img").css('transform', 'rotate(' +180+ 'deg)');
+                    $(".contentZheZhao").show();
+                    $(".header-nav-select-game2").slideUp(100);
+                    $(".header-nav-select-game").slideUp(300);
+                    $(".header-nav-select-match2").slideUp(100);
+                    $(".header-nav-select-match").slideUp(300);
+                    for(var i=1;i<=8;i++){
+                        $(".gamedown"+i).removeClass("down"+i);
+                    }
+                    for(var i=1;i<=6;i++){
+                        $(".matchdown"+i).removeClass("down"+i);
+                    }
+                    $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                    $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+
+                }else{
+                    $(".header_right_select").hide(300);
+                    $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                    $(".contentZheZhao").hide();
+                }
+            })
+        </script>
+
+        <!-- 1.1.4缩放后导航栏-->
+        <div class="row w-100 m-0 small_nav">
+            <!-- 1.1.1.1缩放后导航栏左边按钮-->
+            <a href="#" id="headerBtn1" class="col-1 my_header_btn  p-0"  data-toggle="collapse">
+                <img src="img/header/smallbtn2.png" alt=""/>
+            </a>
+            <!-- 缩放后导航栏中间logo-->
+            <div class="col-2 offset-4 text-center d-flex flex-column justify-content-center">
+                <a href="#" class="">
+                    <img class="my_header_smlogo" src="img/header/logo_small.png" alt=""/>
+                    <h1 class="wihteTxt smallstoretxt mb-0">商城</h1>
+                </a>
+            </div>
+            <a href="#" id="headerBtn2" class="col-1 offset-4 my_header_btn  p-0 text-right"  data-toggle="collapse">
+                <img src="img/header/smallbtn1.png" alt=""/>
+            </a>
+        </div>
+
+    </nav>
+    <!-- 左侧边栏-->
+    <div id="my_nav_left_selection" class="">
+        <div class="my_nav_left_selection_content d-flex flex-column justify-content-start">
+            <ul class="list-unstyled nav_list_left_topUl">
+                <li class="my_nav_select_logo">
+                    <a href="##" id="colseLeftSelect">❌</a>
+                    <div class="float-right text-center">
+                        <img src="img/header/navbar_logo2.png" alt=""/>
+                        <h1 class="mb-0 grayTitle">商城</h1>
+                    </div>
+                </li>
+                <li id="left_select_input">
+                    <div class="left_select_input_icon">🔍</div>
+                    <input type="text" placeholder="搜索商城"/>
+                </li>
+                <li>
+                    <a class="grayTitle" href="##">主页</a>
+                </li>
+                <li data-trigger="dropdown3" class="testHeight">
+                    <div class="left_select_border3"></div>
+                    <a id="gameList3" class="grayTitle" href="##">
+                        游戏 <img src="img/header/jiantou2.png" alt=""/>
+                    </a>
+                    <ul class="dropdown-manu2 list-unstyled">
+                        <li id="blizzSmallTxt">暴雪游戏</li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game1.svg" alt=""/>
+                                魔兽世界
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game2.svg" alt=""/>
+                                守望先锋
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game3.svg" alt=""/>
+                                暗黑破坏神III
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game4.svg" alt=""/>
+                                炉石传说
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game5.svg" alt=""/>
+                                风暴英雄
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game6.svg" alt=""/>
+                                星际争霸II
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                <img src="img/product/product_header/left_select_game7.svg" alt=""/>
+                                星际争霸
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-trigger="dropdown4" class="testHeight">
+                    <div class="left_select_border4"></div>
+                    <a id="gameList4" class="grayTitle" href="##">
+                        服务 <img src="img/header/jiantou2.png" alt=""/>
+                    </a>
+                    <ul class="dropdown-manu2 list-unstyled">
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               ✏ 战网昵称修改服务
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                🎫  暴雪嘉年华门票
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                                🌟 使用兑换码
+                            </a>
+                        </li>
+                    </ul>
+                <li>
+                    <a class="grayTitle" href="##">心愿单</a>
+                </li>
+                <li data-trigger="dropdown5" class="testHeight">
+                    <div class="left_select_border5"></div>
+                    <a id="gameList5" class="grayTitle" href="##">
+                        暴雪游戏点数<img src="img/header/jiantou2.png" alt=""/>
+                    </a>
+                    <ul class="dropdown-manu2 list-unstyled">
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               🎁 充值点数
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               💝 赠送点数
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               💸 兑换点卡
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               📚 充值历史
+                            </a>
+                        </li>
+                        <li>
+                            <a class="newsTxt wihteTxt" href="##">
+                               💠 暴雪游戏点数帮助
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <img class="grayLogo" src="img/product/product_header/gray_logo.PNG" alt=""/>
+        </div>
+    </div>
+
+    <!-- 右侧边栏-->
+    <div id="my_nav_right_selection">
+        <ul class="list-unstyled nav_list_right_topUl">
+            <li class="my_nav_selectRight_close">
+                <img src="img/header/navbar_logo2.png" alt=""/>
+                <a href="##" id="colseRightSelect">❌</a>
+            </li>
+            <li class="my_nav_selectRight_risign">
+                <a class="selectButton select_button_right" href="login.html" target="_blank">登录</a>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">💡&nbsp;支持</a>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">
+                    <span class="bluelogo">⚙</span>&nbsp; 账户
+                </a>
+            </li>
+            <li>
+                <a class="grayTitle" href="resign.html">
+                    <span class="bluelogo">®</span>&nbsp; 免费注册
+                </a>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">主页</a>
+            </li>
+            <li data-trigger="dropdown" class="testHeight">
+                <div class="left_select_border"></div>
+                <a id="gameList" class="grayTitle" href="##">
+                    游戏 <img src="img/header/jiantou2.png" alt=""/>
+                </a>
+                <ul class="dropdown-manu list-unstyled">
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo1.png" alt=""/>
+                            《守望先锋™》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo2.png" alt=""/>
+                            《魔兽世界<span class="Navbar-registered">®</span>》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo3.png" alt=""/>
+                            《炉石传说<span class="Navbar-registered">®</span>》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo4.png" alt=""/>
+                            《风暴英雄™》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo5.png" alt=""/>
+                            《魔兽争霸<span class="Navbar-registered">®</span>III：重制版™》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo6.png" alt=""/>
+                            《暗黑破壞神<span class="Navbar-registered">®</span>不朽™》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo7.png" alt=""/>
+                            《暗黑破坏神<span class="Navbar-registered">®</span>III》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo8.png" alt=""/>
+                            《星际争霸<span class="Navbar-registered">®</span>II》
+                        </a>
+                    </li>
+                    <li class="grayBorderBottom">
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo9.png" alt=""/>
+                            《星际争霸：重制版》
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">🌀&nbsp;&nbsp;更多游戏</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">🚀&nbsp;&nbsp;下载</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">🗨&nbsp;&nbsp;游戏论坛</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">商城</a>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">新闻</a>
+            </li>
+            <li data-trigger="dropdown2" class="testHeight">
+                <div class="left_select_border2"></div>
+                <a id="gameList2" class="grayTitle" href="##">
+                    电子竞技 <img src="img/header/jiantou2.png" alt=""/>
+                </a>
+                <ul class="dropdown-manu list-unstyled">
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo10.png" alt=""/>
+                            守望先锋电竞官网
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo11.png" alt=""/>
+                            炉石传说黄金系列赛
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo12.png" alt=""/>
+                            HGC黄金风暴联赛
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo13.png" alt=""/>
+                            星际争霸II黄金职业联赛
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            <img src="img/header/leftSelectSmallLogo14.png" alt=""/>
+                            魔兽争霸III黄金联赛
+                        </a>
+                    </li>
+                    <li>
+                        <a class="newsTxt wihteTxt" href="##">
+                            &nbsp;🏆
+                            &nbsp;申请暴雪电竞赛事授权
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="grayTitle" href="##">BLIZZCON</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        //先实现单击按钮下拉
+        $("[data-trigger=dropdown] ul").hide();
+        for(var i=2;i<=5;i++){
+            $("[data-trigger=dropdown"+i+"] ul").slideUp();
+        };
+        //.css("display","none")
+        $("[data-trigger=dropdown]").on("click",function(){
+            if($("[data-trigger=dropdown] ul").is(":hidden")){
+                $("#gameList img").css('transform', 'rotate(' + (-180)+ 'deg)');
+            }
+            else{
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            var $btn=$(this).children("ul");
+            $btn.slideToggle(200);
+            $(".left_select_border").fadeToggle(200);
+            $("[data-trigger=dropdown2] ul").slideUp(200);
+            $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border2").hide();
+        })
+        $("[data-trigger=dropdown2]").on("click",function(){
+            if($("[data-trigger=dropdown2] ul").is(":hidden"))
+                $("#gameList2 img").css('transform', 'rotate(' + (-180)+ 'deg)');
+            else{
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+            }
+            var $btn=$(this).children("ul");
+            $btn.slideToggle(200);
+            $(".left_select_border2").fadeToggle(200);
+            $("[data-trigger=dropdown] ul").slideUp(200);
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border").hide();
+        })
+        $("[data-trigger=dropdown3]").on("click",function(){
+            if($("[data-trigger=dropdown3] ul").is(":hidden"))
+                $("#gameList3 img").css('transform', 'rotate(' + (-180)+ 'deg)');
+            else{
+                $("#gameList3 img").css('transform', 'rotate(' + 0+ 'deg)');
+            }
+            var $btn=$(this).children("ul");
+            $btn.slideToggle(200);
+            $(".left_select_border3").fadeToggle(200);
+            $("[data-trigger=dropdown4] ul").slideUp(200);
+            $("[data-trigger=dropdown5] ul").slideUp(200);
+            $("#gameList4 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("#gameList5 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border4").hide();
+            $(".left_select_border5").hide();
+        })
+        $("[data-trigger=dropdown4]").on("click",function(){
+            if($("[data-trigger=dropdown4] ul").is(":hidden"))
+                $("#gameList4 img").css('transform', 'rotate(' + (-180)+ 'deg)');
+            else{
+                $("#gameList4 img").css('transform', 'rotate(' + 0+ 'deg)');
+            }
+            var $btn=$(this).children("ul");
+            $btn.slideToggle(200);
+            $(".left_select_border4").fadeToggle(200);
+            $("[data-trigger=dropdown3] ul").slideUp(200);
+            $("[data-trigger=dropdown5] ul").slideUp(200);
+            $("#gameList3 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("#gameList5 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border3").hide();
+            $(".left_select_border5").hide();
+        })
+        $("[data-trigger=dropdown5]").on("click",function(){
+            if($("[data-trigger=dropdown5] ul").is(":hidden"))
+                $("#gameList5 img").css('transform', 'rotate(' + (-180)+ 'deg)');
+            else{
+                $("#gameList5 img").css('transform', 'rotate(' + 0+ 'deg)');
+            }
+            var $btn=$(this).children("ul");
+            $btn.slideToggle(200);
+            $(".left_select_border5").fadeToggle(200);
+            $("[data-trigger=dropdown3] ul").slideUp(200);
+            $("[data-trigger=dropdown4] ul").slideUp(200);
+            $("#gameList3 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("#gameList4 img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border3").hide();
+            $(".left_select_border4").hide();
+        })
+    </script>
+
+    <script>
+        $("#headerBtn2").click(function(){
+            $("#my_nav_right_selection").addClass("rightMove");
+            $("#my_nav_left_selection").removeClass("leftMove");
+            $(".contentZheZhao").show();
+            $("[data-trigger=dropdown] ul").slideUp();
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border").hide();
+            for(var i=2;i<=5;i++){
+                $("[data-trigger=dropdown"+i+"] ul").slideUp();
+            };
+            for(var i=2;i<=5;i++){
+                $("#gameList"+i+" img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            for(var i=2;i<=5;i++){
+                $(".left_select_border"+i).hide();
+            };
+        })
+        $("#colseRightSelect").click(function(){
+            $("#my_nav_right_selection").removeClass("rightMove");
+            $(".contentZheZhao").hide();
+            $("[data-trigger=dropdown] ul").slideUp();
+            $("[data-trigger=dropdown2] ul").slideUp();
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+        })
+        $("#headerBtn1").click(function(){
+            $("#my_nav_left_selection").addClass("leftMove");
+            $("#my_nav_right_selection").removeClass("rightMove");
+            $("[data-trigger=dropdown] ul").slideUp();
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border").hide();
+            for(var i=2;i<=5;i++){
+                $("[data-trigger=dropdown"+i+"] ul").slideUp();
+            };
+            for(var i=2;i<=5;i++){
+                $("#gameList"+i+" img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            for(var i=2;i<=5;i++){
+                $(".left_select_border"+i).hide();
+            };
+            $(".contentZheZhao").show();
+        })
+        $("#colseLeftSelect").click(function(){
+            $("#my_nav_left_selection").removeClass("leftMove");
+            $(".contentZheZhao").hide();
+            for(var i=3;i<=5;i++){
+                $("[data-trigger=dropdown"+i+"] ul").slideUp();
+            };
+            for(var i=3;i<=5;i++){
+                $("#gameList"+i+" img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            for(var i=3;i<=5;i++){
+                $(".left_select_border"+i).hide();
+            };
+        })
+        //      $(".contentZheZhao").click(function(){
+        //         $(".contentZheZhao").hide();
+        //      }
+        $(".contentZheZhao").click(function(){
+            $("#my_nav_left_selection").removeClass("leftMove");
+            $("#my_nav_right_selection").removeClass("rightMove");
+            $(".header-nav-select-game2").slideUp(100);
+            $(".header-nav-select-game").slideUp(300);
+            $(".header-nav-select-match2").slideUp(100);
+            $(".header-nav-select-match").slideUp(300);
+            $(".header_right_select").hide(300);
+            for(var i=1;i<=8;i++){
+                $(".gamedown"+i).removeClass("down"+i);
+            };
+            for(var i=1;i<=6;i++){
+                $(".matchdown"+i).removeClass("down"+i);
+            };
+            $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+            $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("[data-trigger=dropdown] ul").slideUp();
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border").hide();
+            $("[data-trigger=dropdown2] ul").slideUp();
+            for(var i=2;i<=5;i++){
+                $("[data-trigger=dropdown"+i+"] ul").slideUp();
+            };
+            for(var i=2;i<=5;i++){
+                $("#gameList"+i+" img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            for(var i=2;i<=5;i++){
+                $(".left_select_border"+i).hide();
+            };
+            $(".contentZheZhao").hide();
+        })
+
+
+
+        //      窗口大小变化时
+        $(window).resize(function(){
+            $("#my_nav_left_selection").removeClass("leftMove");
+            $("#my_nav_right_selection").removeClass("rightMove");
+            $(".header-nav-select-game2").slideUp(100);
+            $(".header-nav-select-game").slideUp(300);
+            $(".header-nav-select-match2").slideUp(100);
+            $(".header-nav-select-match").slideUp(300);
+            $(".header_right_select").hide(300);
+            for(var i=1;i<=8;i++){
+                $(".gamedown"+i).removeClass("down"+i);
+            }
+            for(var i=1;i<=6;i++){
+                $(".matchdown"+i).removeClass("down"+i);
+            }
+            $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+            $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            $("[data-trigger=dropdown] ul").slideUp();
+            $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+            $(".left_select_border").hide();
+            for(var i=2;i<=5;i++){
+                $("[data-trigger=dropdown"+i+"] ul").slideUp();
+            };
+            for(var i=2;i<=5;i++){
+                $("#gameList"+i+" img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+            for(var i=2;i<=5;i++){
+                $(".left_select_border"+i).hide();
+            };
+            $(".contentZheZhao").hide();
+        })
+    </script>
+
+    <!-- 搜索栏-->
+    <div class="header_search">
+        <ul class="list-unstyled d-flex justify-content-strat mb-0">
+            <li class="search_li0"><a class="grayTitle" href="javascript:;">主页</a></li>
+            <li class="search_li1">
+                <a class="grayTitle header_game_drop" href="javascript:;">
+                    游戏&nbsp;
+                    <img src="img/header/jiantou2.png" alt=""/>
+                </a>
+                <div class="header_drop1">
+                    <ul class="list-unstyled h-100 d-flex flex-column justify-content-between">
+                        <li>暴雪游戏</li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game1.svg" alt=""/>&nbsp;
+                                魔兽世界
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game2.svg" alt=""/>&nbsp;
+                                守望先锋
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game3.svg" alt=""/>&nbsp;
+                                暗黑破坏神III
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game4.svg" alt=""/>&nbsp;
+                                炉石传说
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game5.svg" alt=""/>&nbsp;
+                                风暴英雄
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game6.svg" alt=""/>&nbsp;
+                                星际争霸II
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                <img src="img/product/product_header/left_select_game7.svg" alt=""/>&nbsp;
+                                星际争霸
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="search_li2">
+                <a class="grayTitle header_help_drop" href="javascript:;">
+                    服务
+                    <img src="img/header/jiantou2.png" alt=""/>
+                </a>
+                <div class="header_drop2">
+                    <ul class="list-unstyled h-100 d-flex flex-column justify-content-between">
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                ✍&nbsp;战网昵称修改服务
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                🎫 暴雪嘉年华门票
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                🌟&nbsp;使用兑换码
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="search_input">
+                <div class="search_input_scale">🔍</div>
+                <input type="text" placeholder="搜索商城"/>
+            </li>
+            <li class="heart_border text-center"><a class="grayTitle" href="javascript:;">❤&nbsp;<span>心愿单</span></a></li>
+            <li class="search_li3 pl-1">
+                <a class="grayTitle header_money_drop" href="javascript:;">
+                    暴雪游戏点数
+                    <img src="img/header/jiantou2.png" alt=""/>
+                </a>
+                <div class="header_drop3">
+                    <ul class="list-unstyled h-100 d-flex flex-column justify-content-between">
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                🎁&nbsp;充值点数
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                💝&nbsp;赠送点数
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                💸&nbsp;兑换点卡
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                📚&nbsp;充值历史
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grayTitle" href="javascript:;">
+                                💠&nbsp;暴雪游戏点数帮助
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- input框focus-->
+    <script>
+//        $(window).on("load",function(){
+//            $(".search_input input").onfocus=function fn(){
+//                $(".search_input input").style.color="#f00";
+//            };
+////            $(".search_input input").onblur=function fn(){
+////                $(".search_input input").removeClass("input_big");
+////            };
+//        })
+
+
+        $(".search_input input").focus(function(){
+            $(this).addClass("input_big");
+        }).blur(function(){
+            $(this).removeClass("input_big");
+        })
+    </script>
+
+    <!-- 屏幕下拉40px时搜索栏固定-->
+    <script>
+        $(window).scroll(function(){
+            if($(window).scrollTop()>=40){
+                $(".header_search").addClass("searchFixed");
+            }else{
+                $(".header_search").removeClass("searchFixed");
+            }
+        })
+
+    </script>
+
+    <!-- 搜索栏下拉菜单js-->
+    <script>
+        $(".header_game_drop").click(function(e){
+            e.stopPropagation();
+            if($(".header_drop1").is(":hidden")){
+                $(".header_drop1").show();
+                $(".header_drop2").hide();
+                $(".header_drop3").hide();
+                $(".search_li1>a>img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                $(".search_li2>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".search_li3>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            }else{
+                $(".header_drop1").hide();
+                $(".search_li1>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+        })
+        $(".header_help_drop").click(function(e){
+            e.stopPropagation();
+            if($(".header_drop2").is(":hidden")){
+                $(".header_drop2").show();
+                $(".header_drop1").hide();
+                $(".header_drop3").hide();
+                $(".search_li2>a>img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                $(".search_li1>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".search_li3>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            }else{
+                $(".header_drop2").hide();
+                $(".search_li2>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+        })
+        $(".header_money_drop").click(function(e){
+            e.stopPropagation();
+            if($(".header_drop3").is(":hidden")){
+                $(".header_drop3").show();
+                $(".header_drop1").hide();
+                $(".header_drop2").hide();
+                $(".search_li3>a>img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                $(".search_li1>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".search_li2>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            }else{
+                $(".header_drop3").hide();
+                $(".search_li3>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            };
+        })
+
+        $(function(){
+            $(document).on("click",function(){
+                $(".header_drop1").hide();
+                $(".header_drop2").hide();
+                $(".header_drop3").hide();
+                $(".search_li1>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".search_li2>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".search_li3>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+            })
+        })
+    </script>
+
+    <!-- 底部锚点，需要在下拉到一定高度出现，返回有动画效果-->
+    <a class="toTop" href="javascript:;">
+        <div class="product_tag">🔺</div>
+    </a>
+
+    <script>//返回顶部滑动效果
+        $(".toTop").click(function(){
+            $('body,html').animate({scrollTop:0},1000);
+        })
+    </script>
+
+    <script>
+        $(window).scroll(function(){
+            if($(window).scrollTop()>=150){
+                $(".product_tag").fadeIn();
+            }else{
+                $(".product_tag").fadeOut();
+            }
+        })
+    </script>
+
+</header>

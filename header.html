@@ -1,47 +1,522 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/base.css"/>
-    <title>Document</title>
-</head>
-<body>
-    <!-- 1.头部整体-->
-    <div class="container-fluid">
+<!-- 1.头部整体-->
+    <header id="header" class="container-fluid">
         <!-- 1.1顶部导航栏-->
-        <div class="row my_header_nav w-100">
+        <nav class="navbar navbar-expand-sm my_header_nav">
             <!--1.1.1导航栏logo-->
-            <div class="my_header_1 col-sm-1 pr-0 pl-4">
+            <div class="my_header_1 col-sm-1 pr-0 pl-3">
                 <a href="#">
                     <img class="my_nav_img" src="img/header/logo_small.png" alt="">
                 </a>
             </div>
             <!-- 1.1.2导航栏中间部分内容-->
-            <div class="my_header_1 col-lg-5 col-sm-6">
-                <ul class="list-unstyled d-flex justify-content-between my_header_text m-0">
-                    <li><a class="pl-4" href="#">游戏</a></li>
-                    <li><a href="#">商城</a></li>
-                    <li><a href="#">新闻</a></li>
-                    <li><a href="#">电子竞技</a></li>
-                    <li><a href="#">BLIZZCON</a></li>
+            <div class="my_header_1 col-lg-6 col-sm-8">
+                <ul class="navbar-nav my_header_text m-0">
+                    <li class="nav-item my_header_li pl-1">
+                        <a class="nav-link" href="#">
+                            游戏 <img src="img/header/jiantou2.png" alt=""/>
+                        </a>
+                    </li>
+                    <li class="nav-item pl-3"><a class="nav-link" href="product_index.html"  target="_blank">商城</a></li>
+                    <li class="nav-item pl-3"><a class="nav-link" href="#">新闻</a></li>
+                    <li class="nav-item pl-3 my_header_match">
+                        <a class="nav-link" href="#">
+                            电子竞技 <img src="img/header/jiantou2.png" alt=""/>
+                        </a>
+                    </li>
+                    <li class="nav-item pl-3"><a class="nav-link" href="#">BLIZZCON</a></li>
                 </ul>
             </div>
+
+
+            <!-- 导航栏下拉游戏菜单小图模式-->
+            <div class="header-nav-select-game"></div>
+            <div class="header-nav-select-game2">
+                <div class="header-nav-select-img">
+                    <ul class="list-unstyled d-flex justify-content-between">
+                        <li class="gamedown1">
+                            <a href="##">
+                                <img src="img/header/selectdown1.png" alt=""/>
+                                <div class="wihteHref newsTxt">《守望先锋™》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown2">
+                            <a href="##">
+                                <img src="img/header/selectdown2.png" alt=""/>
+                                <div class="wihteHref newsTxt">《魔兽世界<span class="Navbar-registered">®</span>》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown3">
+                            <a href="##">
+                                <img src="img/header/selectdown3.png" alt=""/>
+                                <div class="wihteHref newsTxt">《炉石传说<span class="Navbar-registered">®</span>》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown4">
+                            <a href="##">
+                                <img src="img/header/selectdown4.png" alt=""/>
+                                <div class="wihteHref newsTxt">《风暴英雄™》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown5">
+                            <a href="##">
+                                <img src="img/header/selectdown5.png" alt=""/>
+                                <div class="wihteHref newsTxt">《星际争霸<span class="Navbar-registered">®</span>II》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown6">
+                            <a href="##">
+                                <img src="img/header/selectdown6.png" alt=""/>
+                                <div class="wihteHref newsTxt">《星际争霸：重制版》</div>
+                            </a>
+                        </li>
+                        <li class="gamedown7">
+                            <a href="##">
+                                <img src="img/header/selectdown7.png" alt=""/>
+                                <div class="wihteHref newsTxt">《暗黑破坏神<span class="Navbar-registered">®</span>III》</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-nav-select-txt">
+                    <ul class="list-unstyled d-flex justify-content-center gamedown8">
+                        <li><a class="wihteHref" href="##">🌀&nbsp;更多游戏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a class="wihteHref" href="##">♻&nbsp;战网应用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a class="wihteHref" href="##">🚀&nbsp;下载&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a class="wihteHref" href="##">🗨&nbsp;游戏论坛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <script>
+                $(".my_header_li").click(function(){
+//            $(".header-nav-select-game2").toggleClass("selectIn");
+                    if($(".header-nav-select-game").is(":hidden")){
+                        $(".header-nav-select-game").slideDown(100);
+                        $(".header-nav-select-game2").show(100);
+//               $(".header-nav-select-game2").show(100).addClass(".selectIn");
+                        $(".my_header_li>a>img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                        $(".contentZheZhao").show();
+                        $(".header-nav-select-match2").slideUp(100);
+                        $(".header-nav-select-match").slideUp(300);
+                        $(".header_right_select").hide(300);
+                        for(var i=1;i<=6;i++){
+                            $(".matchdown"+i).removeClass("down"+i);
+                        }
+                        $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                        $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                    }
+                    else{
+//               $(".header-nav-select-game2").removeClass(".selectIn").hide(200);
+                        $(".header-nav-select-game2").slideUp(100);
+                        $(".header-nav-select-game").slideUp(300);
+                        $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                        $(".contentZheZhao").hide();
+                    }
+                    for(var i=1;i<=8;i++){
+                        $(".gamedown"+i).toggleClass("down"+i);
+                    }
+                });
+            </script>
+
+            <div class="header-nav-select-match"></div>
+            <div class="header-nav-select-match2">
+                <div class="header-nav-select-matchimg">
+                    <ul class="list-unstyled d-flex justify-content-between">
+                        <li class="matchdown1"><a class="grayTitle" href="##"><img src="img/header/selectMatch1.png" alt=""/>守望先锋电竞官网</a></li>
+                        <li class="matchdown2"><a class="grayTitle" href="##"><img src="img/header/selectMatch2.png" alt=""/>炉石传说黄金系列赛</a></li>
+                        <li class="matchdown3"><a class="grayTitle" href="##"><img src="img/header/selectMatch3.png" alt=""/>HGC黄金风暴联赛</a></li>
+                        <li class="matchdown4"><a class="grayTitle" href="##"><img src="img/header/selectMatch4.png" alt=""/>星际争霸II黄金职业联赛</a></li>
+                        <li class="matchdown5"><a class="grayTitle" href="##"><img src="img/header/selectMatch5.png" alt=""/>魔兽争霸III黄金联赛</a></li>
+                    </ul>
+                </div>
+                <div class="header-nav-select-txt">
+                    <ul class="list-unstyled d-flex justify-content-center">
+                        <li class="matchdown6"><a class="wihteHref" href="##">🏆&nbsp;&nbsp;申请暴雪电竞赛事授权</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <script>
+                $(".my_header_match").click(function(){
+//            $(".header-nav-select-game").toggleClass("selectIn");
+                    if($(".header-nav-select-match2").is(":hidden")){
+                        $(".header-nav-select-match").slideDown(100);
+                        $(".header-nav-select-match2").show(100);
+                        $(".my_header_match>a>img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                        $(".contentZheZhao").show();
+                        $(".header-nav-select-game2").slideUp(100);
+                        $(".header-nav-select-game").slideUp(300);
+                        $(".header_right_select").hide(300);
+                        for(var i=1;i<=8;i++){
+                            $(".gamedown"+i).removeClass("down"+i);
+                        }
+                        $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                        $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                    }
+                    else{
+                        $(".header-nav-select-match2").slideUp(100);
+                        $(".header-nav-select-match").slideUp(300);
+                        $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                        $(".contentZheZhao").hide();
+                    }
+                    for(var i=1;i<=6;i++){
+                        $(".matchdown"+i).toggleClass("down"+i);
+                    }
+                });
+            </script>
+
             <!-- 1.1.3导航栏右边注册内容-->
-            <div class="my_header_1 col-lg-6 col-sm-5 pr-0">
-                <ul class="list-unstyled d-flex flex-nowrap justify-content-end my_header_text m-0">
-                    <li class="pr-4"><a href="#">支持</a></li>
-                    <li class="pr-4"><a href="#">我的账户</a></li>
+            <div class="my_header_1 col-lg-5 col-sm-3 pr-0">
+                <ul class="navbar-nav justify-content-end my_header_text m-0">
+                    <li class="nav-item"><a class="nav-link" href="#">支持</a></li>
+                    <li class="nav-item right_select_big pr-3">
+                        <a class="nav-link" href="#">
+                            我的账户
+                            <img src="img/header/jiantou2.png" alt=""/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 右边下拉菜单-->
+            <div class="header_right_select">
+                <ul class="list-unstyled">
+                    <li class="my_nav_selectRight_risign"><a class="selectButton select_button_right" href="login.html" target="_blank">登录</a></li>
+                    <li><a class="grayTitle" href="login.html">账户</a></li>
+                    <li><a class="grayTitle" href="resign.html" target="_blank">免费注册</a></li>
+                </ul>
+            </div>
+
+            <script>
+                $(".right_select_big").click(function(){
+                    if($(".header_right_select").is(":hidden")){
+                        $(".header_right_select").show(300);
+                        $(".right_select_big>a>img").css('transform', 'rotate(' +180+ 'deg)');
+                        $(".contentZheZhao").show();
+                        $(".header-nav-select-game2").slideUp(100);
+                        $(".header-nav-select-game").slideUp(300);
+                        $(".header-nav-select-match2").slideUp(100);
+                        $(".header-nav-select-match").slideUp(300);
+                        for(var i=1;i<=8;i++){
+                            $(".gamedown"+i).removeClass("down"+i);
+                        }
+                        for(var i=1;i<=6;i++){
+                            $(".matchdown"+i).removeClass("down"+i);
+                        }
+                        $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                        $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+
+                    }else{
+                        $(".header_right_select").hide(300);
+                        $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                        $(".contentZheZhao").hide();
+                    }
+                })
+            </script>
+
+            <!-- 1.1.4缩放后导航栏-->
+            <div class="row w-100 ml-0 small_nav">
+                <!-- 1.1.1.1缩放后导航栏左边按钮-->
+                <a href="#" id="headerBtn1" class="col-1 my_header_btn  p-0"  data-toggle="collapse">
+                    <img src="img/header/smallbtn2.png" alt=""/>
+                </a>
+                <div class="col-2 offset-4">
+                    <a href="#" class="d-flex justify-content-center">
+                        <img class="my_header_smlogo" src="img/header/logo_small.png" alt=""/>
+                    </a>
+                </div>
+                <a href="#" id="headerBtn2" class="col-1 offset-4 my_header_btn  p-0 text-right"  data-toggle="collapse">
+                    <img src="img/header/smallbtn1.png" alt=""/>
+                </a>
+            </div>
+
+        </nav>
+        <!-- 左侧边栏-->
+        <div id="my_nav_left_selection" class="">
+            <div class="my_nav_left_selection_content d-flex flex-column justify-content-start">
+                <ul class="list-unstyled nav_list_left_topUl">
+                    <li class="my_nav_select_logo">
+                        <a href="##" id="colseLeftSelect">❌</a>
+                        <a class=""  href="##"><img src="img/header/navbar_logo2.png" alt=""/></a>
+                    </li>
+                    <li><a class="grayTitle" href="##">主页</a></li>
+                    <li data-trigger="dropdown" class="testHeight">
+                        <div class="left_select_border"></div>
+                        <a id="gameList" class="grayTitle" href="##">
+                            游戏 <img src="img/header/jiantou2.png" alt=""/>
+                        </a>
+                        <ul class="dropdown-manu list-unstyled">
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo1.png" alt=""/>
+                                    《守望先锋™》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo2.png" alt=""/>
+                                    《魔兽世界<span class="Navbar-registered">®</span>》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo3.png" alt=""/>
+                                    《炉石传说<span class="Navbar-registered">®</span>》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo4.png" alt=""/>
+                                    《风暴英雄™》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo5.png" alt=""/>
+                                    《魔兽争霸<span class="Navbar-registered">®</span>III：重制版™》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo6.png" alt=""/>
+                                    《暗黑破壞神<span class="Navbar-registered">®</span>不朽™》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo7.png" alt=""/>
+                                    《暗黑破坏神<span class="Navbar-registered">®</span>III》
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo8.png" alt=""/>
+                                    《星际争霸<span class="Navbar-registered">®</span>II》
+                                </a>
+                            </li>
+                            <li class="grayBorderBottom">
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo9.png" alt=""/>
+                                    《星际争霸：重制版》
+                                </a>
+                            </li>
+                            <li><a class="newsTxt wihteTxt" href="##">🌀&nbsp;&nbsp;更多游戏</a></li>
+                            <li><a class="newsTxt wihteTxt" href="##">🚀&nbsp;&nbsp;下载</a></li>
+                            <li><a class="newsTxt wihteTxt" href="##">🗨&nbsp;&nbsp;游戏论坛</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="grayTitle" href="product_index.html" target="_blank">商城</a>
+                    </li>
+                    <li>
+                        <a class="grayTitle" href="##">新闻</a>
+                    </li>
+                    <li data-trigger="dropdown2" class="testHeight">
+                        <div class="left_select_border2"></div>
+                        <a id="gameList2" class="grayTitle" href="##">
+                            电子竞技 <img src="img/header/jiantou2.png" alt=""/>
+                        </a>
+                        <ul class="dropdown-manu list-unstyled">
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo10.png" alt=""/>
+                                    守望先锋电竞官网
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo11.png" alt=""/>
+                                    炉石传说黄金系列赛
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo12.png" alt=""/>
+                                    HGC黄金风暴联赛
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo13.png" alt=""/>
+                                    星际争霸II黄金职业联赛
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    <img src="img/header/leftSelectSmallLogo14.png" alt=""/>
+                                    魔兽争霸III黄金联赛
+                                </a>
+                            </li>
+                            <li>
+                                <a class="newsTxt wihteTxt" href="##">
+                                    &nbsp;🏆
+                                    &nbsp;申请暴雪电竞赛事授权
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="grayTitle" href="##">BLIZZCON</a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled nav_list_left_bottomUl">
+                    <li>
+                        <a class="newsTxt" href="##">支持</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt" href="##">账号</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt" href="##">我的礼物</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt" href="##">工作机会</a>
+                    </li>
+                    <li>
+                        <a class="newsTxt" href="##">公司信息</a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="my_banner">
+
+        <!-- 右侧边栏-->
+        <div id="my_nav_right_selection">
+            <ul class="list-unstyled nav_list_right_topUl">
+                <li class="my_nav_selectRight_close">
+                    <a href="##" id="colseRightSelect">❌</a>
+                </li>
+                <li class="my_nav_selectRight_risign">
+                    <a class="selectButton select_button_right" href="login.html" target="_blank">登录</a>
+                </li>
+                <li><a class="grayTitle" href="##">支持</a></li>
+                <li><a class="grayTitle" href="##">账户</a></li>
+                <li><a class="grayTitle" href="resign.html" target="_blank">免费注册</a></li>
+            </ul>
         </div>
-    </div>
-</body>
-</html>
+
+        <script>
+            //先实现单击按钮下拉
+            $("[data-trigger=dropdown] ul").hide();
+            $("[data-trigger=dropdown2] ul").hide();
+            //.css("display","none")
+            $("[data-trigger=dropdown]").on("click",function(){
+                if($("[data-trigger=dropdown] ul").is(":hidden"))
+                    $("#gameList img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                else{
+                    $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                };
+                var $btn=$(this).children("ul");
+                //$btn的下一个兄弟是隐藏的
+                $btn.slideToggle(200);
+                $(".left_select_border").fadeToggle(200);
+                $("[data-trigger=dropdown2] ul").slideUp(200);
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border2").hide();
+            })
+            $("[data-trigger=dropdown2]").on("click",function(){
+                if($("[data-trigger=dropdown2] ul").is(":hidden"))
+                    $("#gameList2 img").css('transform', 'rotate(' + (-180)+ 'deg)');
+                else{
+                    $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                }
+                var $btn=$(this).children("ul");
+                $btn.slideToggle(200);
+                $(".left_select_border2").fadeToggle(200);
+                $("[data-trigger=dropdown] ul").slideUp(200);
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border").hide();
+            })
+        </script>
+
+        <script>
+            headerBtn2.onclick=function(){
+                $("#my_nav_right_selection").addClass("rightMove");
+                $("#my_nav_left_selection").removeClass("leftMove");
+                $(".contentZheZhao").show();
+                $("[data-trigger=dropdown] ul").slideUp();
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border").hide();
+                $("[data-trigger=dropdown2] ul").slideUp();
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border2").hide();
+            }
+            colseRightSelect.onclick=function(){
+                $("#my_nav_right_selection").removeClass("rightMove");
+                $(".contentZheZhao").hide();
+            }
+            $("#headerBtn1").click(function(){
+                $("#my_nav_left_selection").addClass("leftMove");
+                $("#my_nav_right_selection").removeClass("rightMove");
+                $(".contentZheZhao").show();
+            })
+            $("#colseLeftSelect").click(function(){
+                $("#my_nav_left_selection").removeClass("leftMove");
+                $(".contentZheZhao").hide();
+                $("[data-trigger=dropdown] ul").slideUp();
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border").hide();
+                $("[data-trigger=dropdown2] ul").slideUp();
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border2").hide();
+            })
+            //      $(".contentZheZhao").click(function(){
+            //         $(".contentZheZhao").hide();
+            //      }
+            $(".contentZheZhao").click(function(){
+                $("#my_nav_left_selection").removeClass("leftMove");
+                $("#my_nav_right_selection").removeClass("rightMove");
+                $(".header-nav-select-game2").slideUp(100);
+                $(".header-nav-select-game").slideUp(300);
+                $(".header-nav-select-match2").slideUp(100);
+                $(".header-nav-select-match").slideUp(300);
+                $(".header_right_select").hide(300);
+                for(var i=1;i<=8;i++){
+                    $(".gamedown"+i).removeClass("down"+i);
+                }
+                for(var i=1;i<=6;i++){
+                    $(".matchdown"+i).removeClass("down"+i);
+                }
+                $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $("[data-trigger=dropdown] ul").slideUp();
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border").hide();
+                $("[data-trigger=dropdown2] ul").slideUp();
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border2").hide();
+                $(".contentZheZhao").hide();
+            })
+
+
+
+            //      窗口大小变化时
+            $(window).resize(function(){
+                $("#my_nav_left_selection").removeClass("leftMove");
+                $("#my_nav_right_selection").removeClass("rightMove");
+                $(".header-nav-select-game2").slideUp(100);
+                $(".header-nav-select-game").slideUp(300);
+                $(".header-nav-select-match2").slideUp(100);
+                $(".header-nav-select-match").slideUp(300);
+                $(".header_right_select").hide(300);
+                for(var i=1;i<=8;i++){
+                    $(".gamedown"+i).removeClass("down"+i);
+                }
+                for(var i=1;i<=6;i++){
+                    $(".matchdown"+i).removeClass("down"+i);
+                }
+                $(".right_select_big>a>img").css('transform', 'rotate(' +0+ 'deg)');
+                $(".my_header_match>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".my_header_li>a>img").css('transform', 'rotate(' + 0+ 'deg)');
+                $("[data-trigger=dropdown] ul").slideUp();
+                $("#gameList img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border").hide();
+                $("[data-trigger=dropdown2] ul").slideUp();
+                $("#gameList2 img").css('transform', 'rotate(' + 0+ 'deg)');
+                $(".left_select_border2").hide();
+                $(".contentZheZhao").hide();
+            })
+
+        </script>
+        <!--<div class="my_banner"></div>-->
+    </header>
