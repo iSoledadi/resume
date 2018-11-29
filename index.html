@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+   <link rel="stylesheet" href="css/bootstrap.css"/>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery-1.11.3.js"></script>
+   <link rel="stylesheet" href="css/base.css"/>
+   <link rel="stylesheet" href="css/index.css"/>
+   <!--<link rel="stylesheet" href="css/header.css"/>-->
+   <link rel="stylesheet" href="css/footer.css"/>
+
+   <title></title>
+</head>
+<body>
+<div class="container-fluid">
+   <table></table>
+   <!-- 遮罩层-->
+   <div class="contentZheZhao"></div>
+   <!--头部-->
+   <header id="header" class="container-fluid"></header>
+
+
+
+   <!-- 主体-->
+
+      <div class="my_banner">
+         <div class="banner-zheZhao"></div>
+         <div id="mycar" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="none">
+            <!-- 轮播图片-->
+            <div class="carousel-inner">
+               <div class="carousel-item my_banner_img1 active item1">
+                  <div class="carousel-caption banner-caption1 caption1">
+                     <div>
+                        <img src="img/header/caption1.png" alt=""/>
+                     </div>
+                     <h1 class="captiontxt1">虚拟门票销售中</h1>
+                     <a class="Button" href="##">了解详情</a>
+                  </div>
+               </div>
+               <div class="carousel-item my_banner_img2 item2">
+                  <div class="carousel-caption banner-caption1 caption2">
+                     <div>
+                        <img src="img/header/caption2.png" alt=""/>
+                     </div>
+                     <h1 class="captiontxt1">万圣惊魂夜恐惧再临</h1>
+                     <a class="Button" href="##">了解详情</a>
+                  </div>
+               </div>
+               <div class="carousel-item my_banner_img3 item3">
+                  <div class="carousel-caption banner-caption1 caption3">
+                     <div>
+                        <img src="img/header/caption3.png" alt=""/>
+                     </div>
+                     <h1 class="captiontxt1">加入战斗!</h1>
+                     <a class="Button" href="##">了解详情</a>
+                  </div>
+               </div>
+               <div class="carousel-item my_banner_img4 item4">
+                  <div class="carousel-caption banner-caption1 caption4">
+                     <div>
+                        <img src="img/header/caption4.png" alt=""/>
+                     </div>
+                     <h1 class="captiontxt1">第15赛季现已开启</h1>
+                     <a class="Button" href="##">了解详情</a>
+                  </div>
+               </div>
+            </div>
+
+            <!-- 测试轮播图active时位移-->
+            <script>
+               if($(".carousel-item").hasClass("active")){
+                  if($(".my_banner_img1").hasClass("active")){
+                     $(".my_banner_img1").toggleClass("testMove2");
+                  }
+                  $(".carousel-item").toggleClass("testMove");
+               }else{
+                  $(".carousel-item").removeClass("testMove");
+                  $(".my_banner_img1").removeClass("testMove2");
+               }
+               if($(".carousel-item").addClass("carousel-item-left")){
+                  $(".caption1").addClass("testAppear");
+                  $(".caption2").addClass("testAppear");
+                  $(".caption3").addClass("testAppear");
+                  $(".caption4").addClass("testAppear");
+               }
+            </script>
+
+            <!-- 下拉实现图片渐变-->
+            <script>
+               $(window).scroll(function(){
+                 var opa=0;
+
+                  var i=$(window).scrollTop();
+                  if(i<500){
+                    i= i/50;
+                     opa=1/i;
+                     $(".my_banner_img1 img").css("opacity",opa);
+                     $(".my_banner_img2 img").css("opacity",opa);
+                     $(".my_banner_img3 img").css("opacity",opa);
+                     $(".my_banner_img4 img").css("opacity",opa);
+                  }
+               })
+
+//               下拉时banner加遮罩层并有渐变效果
+
+
+
+            </script>
+
+            <!-- 左右按钮-->
+            <a href="#mycar" class="carousel-control-prev" data-slide="prev">
+               <div class="prevButton">
+                  <img src="img/index/game/hover-prev.png" alt=""/>
+               </div>
+            </a>
+            <a href="#mycar" class="carousel-control-next" data-slide="next">
+               <div class="nextButton">
+                  <img src="img/index/game/hover-next.png" alt=""/>
+               </div>
+            </a>
+            <!-- 鼠标hover时箭头变成白色-->
+            <script>
+               $(".prevButton").mouseenter(function(){
+                  $(".prevButton img").attr("src","img/index/game/hover-prev3.png");
+               })
+               $(".prevButton").mouseleave(function(){
+                  $(".prevButton img").attr("src","img/index/game/hover-prev.png");
+               })
+               $(".nextButton").mouseenter(function(){
+                  $(".nextButton img").attr("src","img/index/game/hover-next3.png");
+               })
+               $(".nextButton").mouseleave(function(){
+                  $(".nextButton img").attr("src","img/index/game/hover-next.png");
+               })
+            </script>
+
+            <!-- 指示器-->
+            <ul class="carousel-indicators">
+               <li id="zhishi1" class="active" data-slide-to="0" data-target="#mycar">
+                  <div class="jinDuTiao1"></div>
+               </li>
+               <li id="zhishi2" data-slide-to="1" data-target="#mycar">
+                  <div class="jinDuTiao2"></div>
+               </li>
+               <li id="zhishi3" data-slide-to="2" data-target="#mycar">
+                  <div class="jinDuTiao3"></div>
+               </li>
+               <li id="zhishi4" data-slide-to="3" data-target="#mycar">
+                  <div class="jinDuTiao4"></div>
+               </li>
+            </ul>
+         </div>
+      </div>
+
+   <!-- 指示器进度条-->
+   <script>
+      $(window).on("load",function(){
+         $(".jinDuTiao1").addClass("jinDuTiao11");
+         $(".jinDuTiao2").addClass("jinDuTiao22");
+         $(".jinDuTiao3").addClass("jinDuTiao33");
+         $(".jinDuTiao4").addClass("jinDuTiao44");
+      })
+   </script>
+   <script>
+      $(".carousel-indicators li").click(function(){
+         $(".jinDuTiao1").css("display","none");
+         $(".jinDuTiao2").css("display","none");
+         $(".jinDuTiao3").css("display","none");
+         $(".jinDuTiao4").css("display","none");
+      })
+      $(".carousel-control-prev").click(function(){
+         $(".jinDuTiao1").css("display","none");
+         $(".jinDuTiao2").css("display","none");
+         $(".jinDuTiao3").css("display","none");
+         $(".jinDuTiao4").css("display","none");
+      })
+      $(".carousel-control-next").click(function(){
+         $(".jinDuTiao1").css("display","none");
+         $(".jinDuTiao2").css("display","none");
+         $(".jinDuTiao3").css("display","none");
+         $(".jinDuTiao4").css("display","none");
+      })
+
+//      事件监听，当当前浏览页被切换时，进度条动画停止
+      $(window).on("visibilitychange",function(){
+         if(document.hidden){
+            $(".jinDuTiao1").css("display","none");
+            $(".jinDuTiao2").css("display","none");
+            $(".jinDuTiao3").css("display","none");
+            $(".jinDuTiao4").css("display","none");
+         }
+      })
+   </script>
+
+   <script>
+      $(".my_banner").mouseenter(function(){
+         $(".prevButton").addClass("darkBg");
+         $(".nextButton").addClass("darkBg");
+      })
+      $(".my_banner").mouseleave(function(){
+         $(".prevButton").removeClass("darkBg");
+         $(".nextButton").removeClass("darkBg");
+      })
+   </script>
+
+   <!-- 所有游戏-->
+   <div class="my_all_games">
+      <div class="my_all_games_bg"></div>
+         <div class="my_game_content mb-0">
+            <table></table>
+            <div class="my_game_content_top">
+               <a class="my_content_txt1 txt1left" href="##">游戏</a>
+               <a class="my_content_txt2 blue_href" href="##">查看所有游戏 &gt;</a>
+            </div>
+            <div class="my_game_content_middle grayTitle">
+               暴雪娱乐
+            </div>
+            <div class="my_game_content_bottom">
+               <div class="game_content_bottom_kuang d-flex">
+                  <div class="leftJianTou d-flex flex-column justify-content-center text-center">
+                     <a href="##"><img src="img/index/game/hover-prev.png" alt=""/></a>
+                  </div>
+                  <div class="my_game_content_img1">
+                     <div class="my_game_content_imgKuang1">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🛒
+                                 <span class="wihteHref">立即购买</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img2">
+                     <div class="my_game_content_imgKuang2">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🛒
+                                 <span class="wihteHref">立即购买</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a class="blue_href" href="##">🖱
+                                 <span class="wihteHref">免费试玩</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img3">
+                     <div class="my_game_content_imgKuang3">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🖱
+                                 <span class="wihteHref">免费畅玩</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img4">
+                     <div class="my_game_content_imgKuang4">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🖱
+                                 <span class="wihteHref">免费畅玩</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img5">
+                     <div class="my_game_content_imgKuang5">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img6">
+                     <div class="my_game_content_imgKuang6">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img7">
+                     <div class="my_game_content_imgKuang7">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🖱
+                                 <span class="wihteHref">免费畅玩</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img8">
+                     <div class="my_game_content_imgKuang8">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🛒
+                                 <span class="wihteHref">立即购买</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="my_game_content_img9">
+                     <div class="my_game_content_imgKuang9">
+                        <ul class="list-unstyled">
+                           <li><a class="selectButton" href="##">探索</a></li>
+                           <li>
+                              <a class="blue_href" href="##">🛒
+                                 <span class="wihteHref">立即购买</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="rightJianTou d-flex flex-column justify-content-center text-center">
+                     <a href="##"><img src="img/index/game/hover-next.png" alt=""/></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </div>
+   <!-- 鼠标hover时箭头变成白色-->
+   <script>
+      $(".leftJianTou").mouseenter(function(){
+         $(".leftJianTou img").attr("src","img/index/game/hover-prev3.png");
+      })
+      $(".leftJianTou").mouseleave(function(){
+         $(".leftJianTou img").attr("src","img/index/game/hover-prev.png");
+      })
+      $(".rightJianTou").mouseenter(function(){
+         $(".rightJianTou img").attr("src","img/index/game/hover-next3.png");
+      })
+      $(".rightJianTou").mouseleave(function(){
+         $(".rightJianTou img").attr("src","img/index/game/hover-next.png");
+      })
+   </script>
+
+   <script>
+      $(".my_game_content_imgKuang1").hover(function(){
+         $(".my_game_content_imgKuang1 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang2").hover(function(){
+         $(".my_game_content_imgKuang2 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang3").hover(function(){
+         $(".my_game_content_imgKuang3 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang4").hover(function(){
+         $(".my_game_content_imgKuang4 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang5").hover(function(){
+         $(".my_game_content_imgKuang5 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang6").hover(function(){
+         $(".my_game_content_imgKuang6 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang7").hover(function(){
+         $(".my_game_content_imgKuang7 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang8").hover(function(){
+         $(".my_game_content_imgKuang8 ul").toggleClass("middleCenter");
+      })
+      $(".my_game_content_imgKuang9").hover(function(){
+         $(".my_game_content_imgKuang9 ul").toggleClass("middleCenter");
+      })
+
+   </script>
+
+   <script>
+//     window.onresize=resizeBannerImage;//当前窗口改变时执行此函数
+//     function resizeBannerImage(){
+//     $(window).resize(function(){
+        if($(window).width()>768){
+           if($(".game_content_bottom_kuang").css("marginLeft")==0)
+              $(".rightJianTou").addClass("disabled");
+           var moved=0;
+           var area=0;
+           $(".leftJianTou").click(function(){
+              var $btn=$(this);
+              if(moved>0){
+                 moved--;
+                 area=-moved*191;
+                 $(".game_content_bottom_kuang").css("marginLeft",area);
+                 $(".rightJianTou").removeClass("disabled");
+                 if(moved==0)
+                    $btn.addClass("disabled");
+              }
+           })
+           $(".rightJianTou").click(function(){
+              var $btn=$(this);
+              if(moved<3){
+                 moved++;
+                 area=-moved*191;
+                 $(".game_content_bottom_kuang").css("marginLeft",area);
+                 $(".leftJianTou").removeClass("disabled");
+//            if(area<-500)
+//               $btn.addClass("disabled").css("display","none");
+              }
+           })
+        }
+//     })
+//      $(window).resize(function(){
+         if($(window).width()<=768){
+            if($(".game_content_bottom_kuang").css("marginLeft")==0)
+               $(".rightJianTou").addClass("disabled");
+            var moved=0;
+            var area=0;
+            $(".leftJianTou").click(function(){
+               var $btn=$(this);
+               if(moved>0){
+                  moved--;
+                  area=-moved*191;
+                  $(".game_content_bottom_kuang").css("marginLeft",area);
+                  $(".rightJianTou").removeClass("disabled");
+                  if(moved==0)
+                     $btn.addClass("disabled");
+               }
+            })
+            $(".rightJianTou").click(function(){
+               var $btn=$(this);
+               if(moved<6){
+                  moved++;
+                  area=-moved*191;
+                  $(".game_content_bottom_kuang").css("marginLeft",area);
+                  $(".leftJianTou").removeClass("disabled");
+      //            if(area<-500)
+      //               $btn.addClass("disabled").css("display","none");
+               }
+            })
+         }
+//      })
+   </script>
+
+   <!-- 桌面应用-->
+   <div class="my_windowapp row">
+      <div class="my_windowapp_left col-lg-6 col-md-12 d-flex justify-content-end">
+         <div class="float-left">
+            <a class="wihteHref"  href="##">一站式枢纽：</a>
+         </div>
+         <div class="my_windowapp_left_a">
+            <a class="my_windowapp_left_a1 blue_href" href="##">💻 暴雪战网桌面应用</a>
+         </div>
+      </div>
+      <div class="my_windowapp_right col-lg-6 col-md-12 row">
+         <a class="wihteHref" href="##">移动社交&nbsp;&nbsp;</a>
+         <a class="my_windowapp_left_a1 blue_href col-lg-5 col-md-12 pl-0" href="##">📱 暴雪战网移动应用</a>
+      </div>
+   </div>
+
+   <!-- 焦点新闻-->
+   <div class="my_content_news">
+      <div class="my_content_news_bg"></div>
+         <div class="my_content_news_content">
+            <table></table>
+            <div class="my_game_content_top">
+               <a class="my_content_txt1" href="##">焦点新闻</a>
+               <a class="my_content_txt2 blue_href" href="##">查看所有新闻 &gt;</a>
+            </div>
+            <div class="my_content_news_imgs row justify-content-between">
+               <div class="my_content_news_img1">
+                  <div class="my_news_img">
+                     <div class="my_news_img1">
+                     </div>
+                  </div>
+                  <div class="my_news_txt d-flex flex-column justify-content-start">
+                     <div><a class="wihteHref newsTxt" href="##">新闻</a></div>
+                     <div><a class="topStoriesTitle" href="##">来自MIKE MORHAIME 与 J. ALLEN BRACK 的信</a></div>
+                  </div>
+               </div>
+               <div class="my_content_news_img2">
+                  <div class="my_news_img">
+                     <div class="my_news_img2">
+                     </div>
+                  </div>
+                  <div class="my_news_txt d-flex flex-column justify-content-start">
+                     <div><a class="wihteHref newsTxt" href="##">新闻</a></div>
+                     <div><a class="topStoriesTitle" href="##">《争霸艾泽拉斯》现已全球同步上线测试！</a></div>
+                  </div>
+               </div>
+               <div class="my_content_news_img3">
+                  <div class="my_news_img">
+                     <div class="my_news_img3">
+                     </div>
+                  </div>
+                  <div class="my_news_txt d-flex flex-column justify-content-start">
+                     <div><a class="wihteHref newsTxt" href="##">新闻</a></div>
+                     <div><a class="topStoriesTitle" href="##">中期技巧：掌握基础</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+   </div>
+
+   <!-- 招聘信息-->
+   <div class="my_content_job">
+      <div class="my_job_caption">
+         <div class="my_job_caption_txt1">创造世界</div>
+         <div class="my_job_caption_txt2">了解在暴雪的工作</div>
+         <div class="my_job_caption_txt3"><a class="Button" href="##">查看招聘信息</a></div>
+      </div>
+      <div id="slider">
+         <img src="img/index/job/job1.jpg" class="show" alt=""/>
+         <img src="img/index/job/job2.jpg" alt=""/>
+         <img src="img/index/job/job3.jpg" alt=""/>
+         <img src="img/index/job/job4.jpg" alt=""/>
+         <img src="img/index/job/job5.jpg" alt=""/>
+      </div>
+      <script>
+         function task(){
+            //查找现在class为show的img
+            var img=slider.getElementsByClassName("show")[0];
+            img.className="";
+            //如果img有下一个兄弟
+            if(img.nextElementSibling){
+               //设置img的下一个兄弟的class为show
+               img.nextElementSibling.className="show";
+            }
+            //否则，设置img的父元素的第一个孩子的className为show
+            else{
+               img.parentNode.children[0].className="show";
+            }
+         }
+         var timer=setInterval(task,4000);
+//         slider.onmouseover=function(){
+//            clearInterval(timer);
+//         }
+//         slider.onmouseout=function(){
+//            timer=setInterval(task,4000);
+//         }
+
+//         var imgs=slider.children;
+//         console.log(imgs);
+//         for(var img of imgs){
+//            img.onclick=function(){
+//               //this->当前img
+//               var img=this;
+//               alert(img.alt);
+//               //console.log(img.alt);
+//            }//img.onclick()//this->.前的当前img对象
+//         }//img->最后一个img
+      </script>
+   </div>
+
+
+   <!-- 底部-->
+   <div class="my_ffoter">
+      <div class="my_footer_all">
+         <div class="my_footer_top"></div>
+         <div class="my_footer_content">
+            <div class="my_footer_content_txt d-flex flex-column justify-content-center text-center">
+               <div>
+                  <a href="#">
+                     <img class="my_footer_logo" src="img/login/login_logo.png" alt=""/>
+                  </a>
+               </div>
+               <div class="row my_footer_link">
+                  <div class="">
+                     <a href="#">工作机会</a><span class="ml-2 mr-2">|</span>
+                     <a href="#">关于</a><span class="ml-2 mr-2">|</span>
+                     <a href="#">支持</a><span class="ml-2 mr-2 my_footer_span">|</span>
+                  </div>
+                  <div class="">
+                     <a href="#">媒体中心</a><span class="ml-2 mr-2">|</span>
+                     <a href="#">API</a><span class="ml-2 mr-2">|</span>
+                     <a href="#">安全中心</a>
+                  </div>
+               </div>
+               <div>&copy;2018暴雪娱乐有限公司版权所有。</div>
+               <div>在此提及的其他所有商标是其各自所有人的财产。</div>
+               <div>
+                  <a href="#">隐私</a>
+                  <span class="ml-2 mr-2">|</span>
+                  <a href="#">法律条款</a>
+               </div>
+               <div>沪ICP备16024552号</div>
+               <div>
+                  <img src="img/footer/footer_police.png" alt=""/>
+                  沪公网安备 31011502006954号
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script src="js/header.js"></script>
+</body>
+</html>
