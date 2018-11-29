@@ -1,0 +1,251 @@
+body{
+   background: #0d1e30;
+}
+.container-fluid{
+   position: relative;
+}
+@keyframes shanshuo {
+   0%{
+      opacity:1;
+   }
+   50%{
+      opacity:0.5;
+   }
+   100%{
+      opacity:1;
+   }
+}
+.login_bg{
+   width:1920px;
+   height:903px;
+   position: absolute;
+   left:50%;
+   margin-left:-960px;
+   background-image: url("../img/login/login_bg.jpg");
+   z-index: -1;
+   animation: shanshuo 3s linear 0s infinite;
+}
+.login_content{
+   width:85%;
+   height:903px;
+   margin: 0 auto;
+}
+
+.login_logo{
+   margin:55px auto 40px auto;
+}
+.login_input{
+   width:100%;
+   height:353px;
+   margin:0 auto 120px auto;
+}
+.login_input_ul{
+   width:360px;
+   height:353px;
+   margin: 0 auto;
+}
+.login_input_ul input{
+   padding: 0 10px;
+   font-size: 17px;
+   line-height: 20px;
+   border: 1px solid rgba(255,255,255,0.3);
+   background-color: rgba(0,0,0,0.5);
+   color:#ffffff;
+}
+.login_input_ul li{
+   height:40px;
+   line-height: 40px;
+   margin:5px 0 0 0;
+}
+.redButton{
+   background-color: #d60000;
+   border:none;
+}
+.redButton:hover{
+   background-color: #f70e0e;
+   border:none;
+}
+.selectButton{
+   line-height: 19px;
+}
+.login_line{
+   font-size: 13px;
+   color: rgba(255,255,255,.3);
+}
+.login_input_bottom{
+   height:28px !important;
+   font-size: 15px;
+}
+.login_footer{
+   width:600px;
+   height:158px;
+   margin: 0 auto;
+   color:rgba(225,225,225,0.3);
+   /*position: absolute;*/
+}
+.login_footer a{
+   font-size: 13px;
+}
+.login_footer li{
+   margin-top: 3px;
+}
+.login_footer .login_line{
+   font-size: 12px;
+}
+
+/*width为800的footer*/
+.login_smallfooter{
+   width:100%;
+   height:158px;
+   margin: 0 auto;
+   color:rgba(225,225,225,0.3);
+   /*position: absolute;*/
+}
+.login_smallfooter a{
+   font-size: 11px;
+}
+.login_smallfooter li{
+   margin-top: 3px;
+}
+.login_smallfooter .login_line{
+   font-size: 11px;
+}
+@media screen and (max-width: 800px){
+   .login_footer{
+      display:none;
+   }
+}
+@media screen and (min-width: 801px){
+   .login_smallfooter{
+      display:none;
+   }
+}
+
+
+
+/*注册界面*/
+.resign_content{
+   width:85%;
+   height:auto;
+   margin: 0 auto;
+   display:none !important;
+}
+.resign_logo{
+   margin:55px auto 40px auto;
+}
+.resign_txt{
+   width:500px;
+   height:212px;
+   margin: 0 auto;
+   color:rgba(255,255,255,0.8);
+}
+.resign_txt h1{
+   font-size: 2rem;
+   font-weight: 300;
+}
+.resign_input{
+   width:100%;
+   height:806px;
+   margin:0 auto 120px auto;
+}
+.resign_input_ul{
+   width:500px;
+   height:594px;
+   margin: 0 auto;
+   padding-bottom: 50px;
+}
+.resign_input_ul input{
+   padding: 0 10px;
+   font-size: 17px;
+   line-height: 20px;
+   border: 1px solid rgba(255,255,255,0.3);
+   background-color: rgba(0,0,0,0.5);
+   color:#ffffff;
+}
+.resign_input_ul li{
+   height:40px;
+   line-height: 40px;
+   margin:5px 0 0 0;
+}
+.redButton{
+   background-color: #d60000;
+   border:none;
+}
+.redButton:hover{
+   background-color: #f70e0e;
+   border:none;
+}
+.selectButton{
+   line-height: 19px;
+}
+.resign_line{
+   font-size: 13px;
+   color: rgba(255,255,255,.3);
+}
+.resign_input_bottom{
+   height:28px !important;
+   font-size: 15px;
+}
+.resign_footer{
+   width:100%;
+   height:349px !important;
+   margin: 0 auto;
+   color:rgba(225,225,225,0.3);
+   text-align: center;
+   /*position: absolute;*/
+}
+.resign_footer h1 img{
+   width:124px;
+   height:66px;
+}
+.resign_footer a{
+   font-size: 13px;
+}
+.resign_footer li{
+   margin-top: 3px;
+}
+.resign_footer .resign_line{
+   font-size: 12px;
+}
+
+/*width为800的footer*/
+.resign_smallfooter{
+   width:100%;
+   height:158px;
+   margin: 0 auto;
+   color:rgba(225,225,225,0.3);
+   /*position: absolute;*/
+}
+.resign_smallfooter a{
+   font-size: 11px;
+}
+.resign_smallfooter li{
+   margin-top: 3px;
+}
+.resign_smallfooter .resign_line{
+   font-size: 11px;
+}
+@media screen and (max-width: 800px){
+   .resign_footer{
+      display:none;
+   }
+}
+@media screen and (min-width: 801px){
+   .resign_smallfooter{
+      display:none;
+   }
+}
+.yanzhen1{
+   width:74%;
+}
+.yanzhen2{
+   width:25%;
+   text-align: center;
+}
+
+.d_show{
+   display:block !important;
+}
+.d_hide{
+   display:none !important;
+}
