@@ -7,7 +7,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-1.11.3.js"></script>
+    <!--<script src="js/jquery-1.11.3.js"></script>-->
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/product_index.css"/>
 
@@ -69,7 +69,7 @@
             <!-- 屏幕宽度改变时banner图片src更改-->
             <script>
                 $(document).ready(function(){
-                    if($(window).width()>767){
+                    if($(window).width()>751){
                         $(".my_banner_img1").attr("src","img/product/product_banner/pBanner1.jpg");
                         $(".my_banner_img2").attr("src","img/product/product_banner/pBanner2.jpg");
                         $(".my_banner_img3").attr("src","img/product/product_banner/pBanner3.jpg");
@@ -80,7 +80,7 @@
                     }
                 })
                 $(window).resize(function(){
-                    if($(window).width()>767){
+                    if($(window).width()>751){
                         $(".my_banner_img1").attr("src","img/product/product_banner/pBanner1.jpg");
                         $(".my_banner_img2").attr("src","img/product/product_banner/pBanner2.jpg");
                         $(".my_banner_img3").attr("src","img/product/product_banner/pBanner3.jpg");
@@ -151,21 +151,54 @@
             $(".nextButton").removeClass("darkBg");
         })
     </script>
+    <script>
+        $(function () {
+            // 获取手指在轮播图元素上的一个滑动方向（左右）
+
+            // 获取界面上轮播图容器
+            var $carousels = $('.carousel');
+            var startX,endX;
+            // 在滑动的一定范围内，才切换图片
+            var offset = 50;
+            // 注册滑动事件
+            $carousels.on('touchstart',function (e) {
+                // 手指触摸开始时记录一下手指所在的坐标x
+                startX = e.originalEvent.touches[0].clientX;
+
+            });
+            $carousels.on('touchmove',function (e) {
+                // 目的是：记录手指离开屏幕一瞬间的位置 ，用move事件重复赋值
+                endX = e.originalEvent.touches[0].clientX;
+            });
+            $carousels.on('touchend',function (e) {
+                //console.log(endX);
+                //结束触摸一瞬间记录手指最后所在坐标x的位置 endX
+                //比较endX与startX的大小，并获取每次运动的距离，当距离大于一定值时认为是有方向的变化
+                var distance = Math.abs(startX - endX);
+                if (distance > offset){
+                    //说明有方向的变化
+                    //根据获得的方向 判断是上一张还是下一张出现
+                    $(this).carousel(startX >endX ? 'next':'prev');
+                }
+            })
+        });
+    </script>
 
     <div class="product_main">
         <!-- 游戏图标-->
         <div class="game_logo_list grayborderTB">
             <div class="game_logo_kuang">
-                <span class="text-white">暴雪游戏</span>
+                <span class="text-white text-left">暴雪游戏</span> <div class="gameBr"></div>
                 <ul class="game_logo_ul float-right list-unstyled d-flex justify-content-between">
                     <li><a href="javascripg:;" title="魔兽世界"><img src="img/product/product_header/left_select_game1.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game2.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game3.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game4.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game5.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game6.svg" alt=""/></a></li>
-                    <li><a href="javascripg:;"><img src="img/product/product_header/left_select_game7.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="守望先锋"><img src="img/product/product_header/left_select_game2.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="暗黑破坏神Ⅲ"><img src="img/product/product_header/left_select_game3.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="炉石传说"><img src="img/product/product_header/left_select_game4.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="风暴英雄"><img src="img/product/product_header/left_select_game5.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="星际争霸Ⅱ"><img src="img/product/product_header/left_select_game6.svg" alt=""/></a></li>
+                    <li><a href="javascripg:;" title="星际争霸"><img src="img/product/product_header/left_select_game7.svg" alt=""/></a></li>
                 </ul>
+                <div style="clear:both"></div>
             </div>
         </div>
 
@@ -173,59 +206,297 @@
         <div class="product_floor1">
             <div class="product_floor1_caption text-white">推荐</div>
             <ul class="product_floor1_contain list-unstyled d-flex flex-wrap justify-content-between">
-                <div><li class="product_game1"></li></div>
-                <div><li class="product_game2"></li></div>
-                <div><li class="product_game3"></li></div>
                 <div>
                     <a href="javascript:;">
-                        <li class="product_game4 text-left d-flex flex-column justify-content-end">
-                            <div>
-                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                        <li class="product_game1 text-left d-flex flex-column justify-content-start">
+                                <div class="d-flex flex-column justify-content-end">
+                                    <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                                </div>
+                                <h6 class="text-white product_game_title">翁帕尔</h6>
+                                <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                                <h6 class="grayTitle">宠物</h6>
+                                <h6 class="text-white product_price">￥45</h6>
+                            </li>
+                        </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_game2 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game4.svg" alt=""/>
                             </div>
-                            <h6 class="text-white product_game_title">《守望先锋》传奇典藏版</h6>
-                            <h6 class="product_secondTitle">传奇典藏版</h6>
-                            <h6 class="grayTitle">团队射击游戏</h6>
-                            <h6 class="text-white">￥158</h6>
+                            <h6 class="text-white product_game_title">《炉石传说®》</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">策略类卡牌游戏</h6>
+                            <h6 class="text-white product_price">免费游戏</h6>
                         </li>
                     </a>
                 </div>
                 <div>
-                    <li class="product_game5"></li>
+                    <a href="javascript:;">
+                        <li class="product_game3 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《魔兽世界®》: 争霸艾泽拉斯</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">游戏时间</h6>
+                            <h6 class="text-white product_price">￥75起</h6>
+                        </li>
+                    </a>
                 </div>
-                <div><li class="product_game6"></li></div>
-                <div><li class="product_game7"></li></div>
-                <div><li class="product_game8"></li></div>
-                <div><li class="product_game9"></li></div>
-                <div><li class="product_game10"></li></div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_game4 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game2.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《守望先锋®》：传奇典藏版</h6>
+                            <h6 class="product_secondTitle">传奇典藏版</h6>
+                            <h6 class="grayTitle">团队射击游戏</h6>
+                            <h6 class="text-white product_price">￥158</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_game5 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game6.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《星际争霸II》</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">即时策略游戏</h6>
+                            <h6 class="text-white product_price">免费游戏</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_game6 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game5.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《风暴英雄™》</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">多人在线战术竞技游戏</h6>
+                            <h6 class="text-white product_price">免费游戏</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="game7">
+                    <a href="javascript:;">
+                        <li class="product_game7 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">魔兽世界®: 《争霸艾泽拉斯》数字典藏礼包</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">礼包</h6>
+                            <h6 class="text-white product_price">￥240</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="game8">
+                    <a href="javascript:;">
+                        <li class="product_game8 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game3.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《暗黑破坏神III》: 《夺魂之镰》</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">动作角色扮演游戏</h6>
+                            <h6 class="text-white product_price">￥198起</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="game9">
+                    <a href="javascript:;">
+                        <li class="product_game9 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game4.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">经典</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">奥术之尘礼包</h6>
+                            <h6 class="text-white product_price">￥60起</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="game10">
+                    <a href="javascript:;">
+                        <li class="product_game10 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《守望先锋®》游戏货币: 赠送补给</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">可解锁内容</h6>
+                            <h6 class="text-white product_price">￥12起</h6>
+                        </li>
+                    </a>
+                </div>
             </ul>
 <div></div>
         </div>
 
         <!-- 炉石展示栏-->
-        <div class="product_center">
-            <table></table>
-            <div class="product_introduce_caption text-center d-flex flex-column justify-content-between">
-                <img src="img/product/product_index/introduce_logo.png" alt=""/>
-                <h2 class="grayTitle">探索科学的奥妙！</h2>
-                <a class="selectButton" href="javascript:;">了解详情</a>
+        <div class="product_center_kuang">
+            <div class="product_center">
+                <table></table>
+                <div class="product_introduce_caption text-center d-flex flex-column justify-content-between">
+                    <img src="img/product/product_index/introduce_logo.png" alt=""/>
+                    <h2 class="grayTitle">探索科学的奥妙！</h2>
+                    <a class="selectButton" href="javascript:;">了解详情</a>
+                </div>
+                <img class="pengpengDoctor" src="img/product/product_index/pengpengDoctor.png" alt=""/>
             </div>
-            <img class="pengpengDoctor" src="img/product/product_index/pengpengDoctor.png" alt=""/>
         </div>
+
+        <script>
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > ($(".product_center").offset().top-150)) {
+                    $(".pengpengDoctor").addClass("pengpengApear");
+                    $(".product_introduce_caption").addClass("introduceApear");
+                }
+            })
+        </script>
+
 
         <!-- 商品二楼-->
         <div class="product_floor2">
             <div class="product_floor2_caption text-white">精选</div>
             <ul class="product_floor2_contain list-unstyled d-flex flex-wrap justify-content-between">
-                <div><li class="product_goodgame1"></li></div>
-                <div><li class="product_goodgame2"></li></div>
-                <div><li class="product_goodgame3"></li></div>
-                <div><li class="product_goodgame4"></li></div>
-                <div><li class="product_goodgame5"></li></div>
-                <div><li class="product_goodgame6"></li></div>
-                <div><li class="product_goodgame7"></li></div>
-                <div><li class="product_goodgame8"></li></div>
-                <div><li class="product_goodgame9"></li></div>
-                <div><li class="product_goodgame10"></li></div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame1 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">翁帕尔</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">宠物</h6>
+                            <h6 class="text-white product_price">￥45</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame2 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game8.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">2018暴雪嘉年华虚拟门票</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">票务活动</h6>
+                            <h6 class="text-white product_price">￥238</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame3 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game4.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">砰砰计划</h6>
+                            <h6 class="product_secondTitle">最新内容 </h6>
+                            <h6 class="grayTitle">奥术之尘礼包</h6>
+                            <h6 class="text-white product_price">￥60起</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame4 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game2.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《守望先锋®》游戏货币: 赠送补给</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">可解锁内容</h6>
+                            <h6 class="text-white product_price">￥12起</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame5 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game2.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《守望先锋®》：传奇典藏版</h6>
+                            <h6 class="product_secondTitle">传奇典藏版</h6>
+                            <h6 class="grayTitle">团队射击游戏</h6>
+                            <h6 class="text-white product_price">￥158</h6>
+                        </li>
+                    </a>
+                </div>
+                <div>
+                    <a href="javascript:;">
+                        <li class="product_goodgame6 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">魔兽世界®: 《争霸艾泽拉斯》数字典藏礼包</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">礼包</h6>
+                            <h6 class="text-white product_price">￥240</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="goodgame7">
+                    <a href="javascript:;">
+                        <li class="product_goodgame7 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game4.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">炉石传说®：预购50点奥术之尘</h6>
+                            <h6 class="product_secondTitle">立即预购！</h6>
+                            <h6 class="grayTitle">奥术之尘礼包</h6>
+                            <h6 class="text-white product_price">￥328</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="goodgame8">
+                    <a href="javascript:;">
+                        <li class="product_goodgame8 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game9.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">暴雪游戏点数</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">游戏服务</h6>
+                            <h6 class="text-white product_price">了解详情</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="goodgame9">
+                    <a href="javascript:;">
+                        <li class="product_goodgame9 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game1.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">《魔兽世界®》 : 争霸艾泽拉斯</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">游戏时间</h6>
+                            <h6 class="text-white product_price">￥75起</h6>
+                        </li>
+                    </a>
+                </div>
+                <div class="goodgame10">
+                    <a href="javascript:;">
+                        <li class="product_goodgame10 text-left d-flex flex-column justify-content-start">
+                            <div class="d-flex flex-column justify-content-end">
+                                <img class="middleLogo" src="img/product/product_header/left_select_game3.svg" alt=""/>
+                            </div>
+                            <h6 class="text-white product_game_title">暗黑破坏神III：“死灵再世”内容包</h6>
+                            <h6 class="product_secondTitle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
+                            <h6 class="grayTitle">可解锁内容</h6>
+                            <h6 class="text-white product_price d-flex flex-column justify-content-end">￥88</h6>
+                        </li>
+                    </a>
+                </div>
             </ul>
         </div>
     </div>

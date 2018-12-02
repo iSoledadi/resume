@@ -7,7 +7,7 @@
    <script src="js/jquery.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script src="js/jquery-1.11.3.js"></script>
+   <!--<script src="js/jquery-1.11.3.js"></script>-->
    <link rel="stylesheet" href="css/base.css"/>
    <link rel="stylesheet" href="css/index.css"/>
    <!--<link rel="stylesheet" href="css/header.css"/>-->
@@ -27,134 +27,166 @@
 
    <!-- 主体-->
 
-      <div class="my_banner">
-         <div class="banner-zheZhao"></div>
-         <div id="mycar" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="none">
-            <!-- 轮播图片-->
-            <div class="carousel-inner">
-               <div class="carousel-item my_banner_img1 active item1">
-                  <div class="carousel-caption banner-caption1 caption1">
-                     <div>
-                        <img src="img/header/caption1.png" alt=""/>
-                     </div>
-                     <h1 class="captiontxt1">虚拟门票销售中</h1>
-                     <a class="Button" href="##">了解详情</a>
+   <div class="my_banner">
+      <div class="banner-zheZhao"></div>
+      <div id="mycar" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="none">
+         <!-- 轮播图片-->
+         <div class="carousel-inner">
+            <div class="carousel-item active item1">
+               <img class="my_banner_img1" src="" alt=""/>
+               <div class="carousel-caption banner-caption1 caption1">
+                  <div>
+                     <img src="img/header/caption1.png" alt=""/>
                   </div>
-               </div>
-               <div class="carousel-item my_banner_img2 item2">
-                  <div class="carousel-caption banner-caption1 caption2">
-                     <div>
-                        <img src="img/header/caption2.png" alt=""/>
-                     </div>
-                     <h1 class="captiontxt1">万圣惊魂夜恐惧再临</h1>
-                     <a class="Button" href="##">了解详情</a>
-                  </div>
-               </div>
-               <div class="carousel-item my_banner_img3 item3">
-                  <div class="carousel-caption banner-caption1 caption3">
-                     <div>
-                        <img src="img/header/caption3.png" alt=""/>
-                     </div>
-                     <h1 class="captiontxt1">加入战斗!</h1>
-                     <a class="Button" href="##">了解详情</a>
-                  </div>
-               </div>
-               <div class="carousel-item my_banner_img4 item4">
-                  <div class="carousel-caption banner-caption1 caption4">
-                     <div>
-                        <img src="img/header/caption4.png" alt=""/>
-                     </div>
-                     <h1 class="captiontxt1">第15赛季现已开启</h1>
-                     <a class="Button" href="##">了解详情</a>
-                  </div>
+                  <h1 class="captiontxt1">虚拟门票销售中</h1>
+                  <a class="Button" href="##">了解详情</a>
                </div>
             </div>
-
-            <!-- 测试轮播图active时位移-->
-            <script>
-               if($(".carousel-item").hasClass("active")){
-                  if($(".my_banner_img1").hasClass("active")){
-                     $(".my_banner_img1").toggleClass("testMove2");
-                  }
-                  $(".carousel-item").toggleClass("testMove");
-               }else{
-                  $(".carousel-item").removeClass("testMove");
-                  $(".my_banner_img1").removeClass("testMove2");
-               }
-               if($(".carousel-item").addClass("carousel-item-left")){
-                  $(".caption1").addClass("testAppear");
-                  $(".caption2").addClass("testAppear");
-                  $(".caption3").addClass("testAppear");
-                  $(".caption4").addClass("testAppear");
-               }
-            </script>
-
-            <!-- 下拉实现图片渐变-->
-            <script>
-               $(window).scroll(function(){
-                 var opa=0;
-
-                  var i=$(window).scrollTop();
-                  if(i<500){
-                    i= i/50;
-                     opa=1/i;
-                     $(".my_banner_img1 img").css("opacity",opa);
-                     $(".my_banner_img2 img").css("opacity",opa);
-                     $(".my_banner_img3 img").css("opacity",opa);
-                     $(".my_banner_img4 img").css("opacity",opa);
-                  }
-               })
-
-//               下拉时banner加遮罩层并有渐变效果
-
-
-
-            </script>
-
-            <!-- 左右按钮-->
-            <a href="#mycar" class="carousel-control-prev" data-slide="prev">
-               <div class="prevButton">
-                  <img src="img/index/game/hover-prev.png" alt=""/>
+            <div class="carousel-item item2">
+               <img class="my_banner_img2" src="" alt=""/>
+               <div class="carousel-caption banner-caption1 caption2">
+                  <div>
+                     <img src="img/header/caption2.png" alt=""/>
+                  </div>
+                  <h1 class="captiontxt1">万圣惊魂夜恐惧再临</h1>
+                  <a class="Button" href="##">了解详情</a>
                </div>
-            </a>
-            <a href="#mycar" class="carousel-control-next" data-slide="next">
-               <div class="nextButton">
-                  <img src="img/index/game/hover-next.png" alt=""/>
+            </div>
+            <div class="carousel-item item3">
+               <img class="my_banner_img3" src="" alt=""/>
+               <div class="carousel-caption banner-caption1 caption3">
+                  <div>
+                     <img src="img/header/caption3.png" alt=""/>
+                  </div>
+                  <h1 class="captiontxt1">加入战斗!</h1>
+                  <a class="Button" href="##">了解详情</a>
                </div>
-            </a>
-            <!-- 鼠标hover时箭头变成白色-->
-            <script>
-               $(".prevButton").mouseenter(function(){
-                  $(".prevButton img").attr("src","img/index/game/hover-prev3.png");
-               })
-               $(".prevButton").mouseleave(function(){
-                  $(".prevButton img").attr("src","img/index/game/hover-prev.png");
-               })
-               $(".nextButton").mouseenter(function(){
-                  $(".nextButton img").attr("src","img/index/game/hover-next3.png");
-               })
-               $(".nextButton").mouseleave(function(){
-                  $(".nextButton img").attr("src","img/index/game/hover-next.png");
-               })
-            </script>
-
-            <!-- 指示器-->
-            <ul class="carousel-indicators">
-               <li id="zhishi1" class="active" data-slide-to="0" data-target="#mycar">
-                  <div class="jinDuTiao1"></div>
-               </li>
-               <li id="zhishi2" data-slide-to="1" data-target="#mycar">
-                  <div class="jinDuTiao2"></div>
-               </li>
-               <li id="zhishi3" data-slide-to="2" data-target="#mycar">
-                  <div class="jinDuTiao3"></div>
-               </li>
-               <li id="zhishi4" data-slide-to="3" data-target="#mycar">
-                  <div class="jinDuTiao4"></div>
-               </li>
-            </ul>
+            </div>
+            <div class="carousel-item item4">
+               <img class="my_banner_img4" src="" alt=""/>
+               <div class="carousel-caption banner-caption1 caption4">
+                  <div>
+                     <img src="img/header/caption4.png" alt=""/>
+                  </div>
+                  <h1 class="captiontxt1">第15赛季现已开启</h1>
+                  <a class="Button" href="##">了解详情</a>
+               </div>
+            </div>
          </div>
+
+         <script>
+            $(document).ready(function(){
+               if($(window).width()>751){
+                  $(".my_banner_img1").attr("src","img/index/banner/banner11.jpg");
+                  $(".my_banner_img2").attr("src","img/index/banner/banner22.jpg");
+                  $(".my_banner_img3").attr("src","img/index/banner/banner33.jpg");
+                  $(".my_banner_img4").attr("src","img/index/banner/banner44.jpg");
+               }else{
+                  $(".my_banner_img1").attr("src","img/index/banner/smallbg1.jpg");
+                  $(".my_banner_img2").attr("src","img/index/banner/smallbg2.jpg");
+                  $(".my_banner_img3").attr("src","img/index/banner/smallbg3.jpg");
+                  $(".my_banner_img4").attr("src","img/index/banner/smallbg4.jpg");
+               }
+            });
+            $(window).resize(function(){
+               if($(window).width()>751){
+                  $(".my_banner_img1").attr("src","img/index/banner/banner11.jpg");
+                  $(".my_banner_img2").attr("src","img/index/banner/banner22.jpg");
+                  $(".my_banner_img3").attr("src","img/index/banner/banner33.jpg");
+                  $(".my_banner_img4").attr("src","img/index/banner/banner44.jpg");
+               }else{
+                  $(".my_banner_img1").attr("src","img/index/banner/smallbg1.jpg");
+                  $(".my_banner_img2").attr("src","img/index/banner/smallbg2.jpg");
+                  $(".my_banner_img3").attr("src","img/index/banner/smallbg3.jpg");
+                  $(".my_banner_img4").attr("src","img/index/banner/smallbg4.jpg");
+               }
+            })
+         </script>
+
+         <!-- 下拉实现图片渐变-->
+         <script>
+            $(window).scroll(function(){
+               var opa=0;
+
+               var i=$(window).scrollTop();
+               if(i<500){
+                  i= i/50;
+                  opa=1/i;
+                  $(".carousel-caption img").css("opacity",opa);
+               }
+            })
+         </script>
+
+         <!-- 测试轮播图active时位移-->
+         <script>
+            if($(".carousel-item").hasClass("active")){
+               if($(".item1").hasClass("active")){
+                  $(".my_banner_img1").toggleClass("testMove2");
+               }
+               $(".my_banner_img2").toggleClass("testMove");
+               $(".my_banner_img3").toggleClass("testMove");
+               $(".my_banner_img4").toggleClass("testMove");
+            }else{
+               $(".my_banner_img1").removeClass("testMove2");
+               $(".my_banner_img2").removeClass("testMove");
+               $(".my_banner_img3").removeClass("testMove");
+               $(".my_banner_img4").removeClass("testMove");
+            }
+         </script>
+         <script>
+            if($(".item2").addClass("carousel-item-left")){
+               $(".caption1").toggleClass("testAppear");
+               $(".caption2").toggleClass("testAppear");
+               $(".caption3").toggleClass("testAppear");
+               $(".caption4").toggleClass("testAppear");
+            }
+         </script>
+
+         <!-- 左右按钮-->
+         <a href="#mycar" class="carousel-control-prev" data-slide="prev">
+            <div class="prevButton">
+               <img src="img/index/game/hover-prev.png" alt=""/>
+            </div>
+         </a>
+         <a href="#mycar" class="carousel-control-next" data-slide="next">
+            <div class="nextButton">
+               <img src="img/index/game/hover-next.png" alt=""/>
+            </div>
+         </a>
+
+         <!-- 鼠标hover时箭头变成白色-->
+         <script>
+            $(".prevButton").mouseenter(function(){
+               $(".prevButton img").attr("src","img/index/game/hover-prev3.png");
+            })
+            $(".prevButton").mouseleave(function(){
+               $(".prevButton img").attr("src","img/index/game/hover-prev.png");
+            })
+            $(".nextButton").mouseenter(function(){
+               $(".nextButton img").attr("src","img/index/game/hover-next3.png");
+            })
+            $(".nextButton").mouseleave(function(){
+               $(".nextButton img").attr("src","img/index/game/hover-next.png");
+            })
+         </script>
+
+         <!-- 指示器-->
+         <ul class="carousel-indicators">
+            <li id="zhishi1" class="active" data-slide-to="0" data-target="#mycar">
+               <div class="jinDuTiao1"></div>
+            </li>
+            <li id="zhishi2" data-slide-to="1" data-target="#mycar">
+               <div class="jinDuTiao2"></div>
+            </li>
+            <li id="zhishi3" data-slide-to="2" data-target="#mycar">
+               <div class="jinDuTiao3"></div>
+            </li>
+            <li id="zhishi4" data-slide-to="3" data-target="#mycar">
+               <div class="jinDuTiao4"></div>
+            </li>
+         </ul>
       </div>
+   </div>
 
    <!-- 指示器进度条-->
    <script>
@@ -185,7 +217,7 @@
          $(".jinDuTiao4").css("display","none");
       })
 
-//      事件监听，当当前浏览页被切换时，进度条动画停止
+      //      事件监听，当当前浏览页被切换时，进度条动画停止
       $(window).on("visibilitychange",function(){
          if(document.hidden){
             $(".jinDuTiao1").css("display","none");
@@ -195,7 +227,6 @@
          }
       })
    </script>
-
    <script>
       $(".my_banner").mouseenter(function(){
          $(".prevButton").addClass("darkBg");
@@ -205,6 +236,43 @@
          $(".prevButton").removeClass("darkBg");
          $(".nextButton").removeClass("darkBg");
       })
+   </script>
+
+   <script>
+      $(function () {
+         // 获取手指在轮播图元素上的一个滑动方向（左右）
+
+         // 获取界面上轮播图容器
+         var $carousels = $('.carousel');
+         var startX,endX;
+         // 在滑动的一定范围内，才切换图片
+         var offset = 50;
+         // 注册滑动事件
+         $carousels.on('touchstart',function (e) {
+            // 手指触摸开始时记录一下手指所在的坐标x
+            startX = e.originalEvent.touches[0].clientX;
+
+         });
+         $carousels.on('touchmove',function (e) {
+            // 目的是：记录手指离开屏幕一瞬间的位置 ，用move事件重复赋值
+            endX = e.originalEvent.touches[0].clientX;
+         });
+         $carousels.on('touchend',function (e) {
+            //console.log(endX);
+            //结束触摸一瞬间记录手指最后所在坐标x的位置 endX
+            //比较endX与startX的大小，并获取每次运动的距离，当距离大于一定值时认为是有方向的变化
+            var distance = Math.abs(startX - endX);
+            if (distance > offset){
+               //说明有方向的变化
+               //根据获得的方向 判断是上一张还是下一张出现
+               $(this).carousel(startX >endX ? 'next':'prev');
+               $(".jinDuTiao1").css("display","none");
+               $(".jinDuTiao2").css("display","none");
+               $(".jinDuTiao3").css("display","none");
+               $(".jinDuTiao4").css("display","none");
+            }
+         })
+      });
    </script>
 
    <!-- 所有游戏-->

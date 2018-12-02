@@ -1,0 +1,86 @@
+/*主体顶部背景以及旁边价格*/
+.product_detail1_top_bg{
+    width:100%;
+    height:519px;
+    margin-top: 90px;
+    background: url("../img/product/product_deatails1/product_details1_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 2280px!important;
+    background-attachment: fixed;
+    background-position:top center;
+    position: relative;
+}
+.product_detail_title{
+    width:475px;
+    height:519px;
+    position: absolute;
+    top: 0;
+    right:40px;
+}
+.product_detail_title>img{
+    width:305px;
+    height:160px;
+    margin: 40px auto;
+}
+.product_detail_introduce{
+    width:100%;
+    height:284px;
+    margin-bottom: -40px;
+    background: linear-gradient(to bottom,#272e3b,#1c2534);
+    box-shadow: 0 6px 24px rgba(0,0,0,.3);
+    border-top: 2px solid rgba(255,255,255,.15)
+}
+.introduce_top{
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    height:101px;
+}
+.introduce_top img{
+    width:60px;
+    height:60px;
+    margin-right: 8px;
+}
+.introduce_txt{
+    width:367px;
+    height:60px;
+    padding-left: 6px;
+    color:rgba(255,255,255,.8);
+}
+.introduce_bottom{
+    padding: 20px;
+    height:181px;
+}
+.introduce_bottom .Button{
+    width:100%;
+    height:60px;
+    line-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.introduce_bottom div{
+    width:100%;
+    height:60px;
+    padding: 0 45px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 400;
+}
+.introduce_bottom div a{
+    color:#00aeff;
+}
+.introduce_bottom div a:hover{
+    color:#fff;
+}
+/*商品内容*/
+.product_detail_contain{
+    width:100%;
+    min-height: 2200px;
+    padding:0 40px;
+    /*background:#012650;*/
+    background:#012650;
+    background:url("../img/product/product_deatails1/product_detail_contain_bg.png") top center no-repeat;
+}
+.product_detail_floor1{
+    width:100%;
+    min-height: 398px;
+}

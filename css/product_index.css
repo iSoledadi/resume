@@ -102,7 +102,6 @@ body{
    margin: 100px auto 0 auto;
    padding-top: 50px;
    text-align: left;
-   position: fixed !important;
    left:15%;
 }
 .caption3{
@@ -173,6 +172,7 @@ body{
    margin:5px;
    background-color: rgba(225,225,225,0.3);
    overflow: hidden;
+   z-index: 9999;
    /*background-color: #0aa1ed;*/
    /*transition:background-color 250ms;*/
 }
@@ -211,6 +211,11 @@ body{
 
    .banner-caption1{
       width:700px;
+   }
+}
+@media screen and (max-width: 768px){
+   .pengpengDoctor{
+      display:none !important;
    }
 }
 @media screen and (max-width: 767px){
@@ -278,7 +283,7 @@ body{
 }
 .game_logo_kuang{
    width:466px;
-   height:40px;
+   min-height:40px;
    margin: 0 auto;
    line-height: 40px;
 }
@@ -294,11 +299,24 @@ body{
 .game_logo_ul img:hover{
    transform: scale(1.2,1.2);
 }
+.gameBr{
+   display: none;
+}
+@media screen and (max-width: 1200px){
+   .gameBr{
+      display: block;
+   }
+   .game_logo_kuang{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+   }
+}
 
 /*商品1楼&2楼*/
 .product_floor1,.product_floor2{
    width:100%;
-   min-height:1046px;
+   min-height:500px;
    padding: 40px 40px 80px 40px;
 }
 .product_floor1{
@@ -318,13 +336,29 @@ body{
 }
 .product_floor1_contain,.product_floor2_contain{
    width:100%;
-   min-height:885px;
+   min-height:500px;
 }
 .product_floor1_contain>div,.product_floor2_contain>div{
    width:20%;
    min-height:435px;
    /*margin-bottom: 10px;*/
    padding:10px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1399px){
+   .product_floor1_contain>div,.product_floor2_contain>div{
+      width:25%;
+   }
+   .game9,.game10,.goodgame9,.goodgame10{
+      display:none;
+   }
+}
+@media screen and (min-width: 960px) and (max-width: 1024px){
+   .product_floor1_contain>div,.product_floor2_contain>div{
+      width:33.33%;
+   }
+   .game7,.game8,.goodgame7,.goodgame8,.game9,.game10,.goodgame9,.goodgame10{
+      display:none;
+   }
 }
 .product_floor1_contain li,.product_floor2_contain li{
    width:100%;
@@ -376,7 +410,7 @@ body{
    background:url("../img/product/product_index/product_game9.jpg") rgb(32, 25, 38);
 }
 .product_goodgame4{
-   background:url("../img/product/product_index/product_game10.jpg") rgb(18, 18, 20);
+   background:url("../img/product/product_index/product_game10.jpg") rgb(33, 25, 37);
 }
 .product_goodgame5{
    background:url("../img/product/product_index/product_game4.jpg") rgb(18, 18, 20);
@@ -404,7 +438,30 @@ body{
    width:35px;
    height:35px;
 }
-
+.product_floor1_contain a li div,.product_floor2_contain a li div{
+   width:100%;
+   height:220px;
+   margin-bottom: 6px;
+}
+.product_floor1_contain a li .product_game_title,.product_floor2_contain a li .product_game_title{
+   font-size: 18px;
+   margin-bottom: 6px;
+   min-height: 43.2px;
+}
+.product_floor1_contain a li .product_secondTitle,.product_floor2_contain a li .product_secondTitle{
+   font-size: 13px;
+   color:#ff8a00;
+   margin-bottom: 6px;
+   min-height: 15.2px;
+}
+.product_floor1_contain a li .grayTitle,.product_floor2_contain a li .grayTitle{
+   font-size: 15px;
+   margin-bottom: 6px;
+}
+.product_floor1_contain a li .product_price,.product_floor2_contain a li .product_price{
+   margin-top: 15px;
+   margin-bottom: 0;
+}
 
 /*中间炉石展示区*/
 .product_center{
@@ -417,15 +474,24 @@ body{
    position:relative;
 }
 .pengpengDoctor{
-   position:absolute;
-   top:-75px;
-   right:-75px;
+   width:798px;
+   height:550px;
+   display:block;
+   position: absolute;
+   top: 50%;
+   left: 60%;
+   transform: translate(0,-50%);
+   transition:0.5s;
+   overflow-x: hidden;
+   opacity:0;
 }
 .product_introduce_caption{
    width:286px;
    height:256px;
-   margin-left: 5%;
+   margin-left: 0;
    margin-top: 70px;
+   opacity:0;
+   transition:0.5s;
 }
 .product_introduce_caption h2{
    font-size: 20px;
@@ -433,6 +499,186 @@ body{
 .product_introduce_caption img:first-child{
    width:286px;
    height:150px;
+}
+@media screen and (max-width: 768px){
+   .product_center_kuang{
+      width:100%;
+      height:525px;
+      position: relative;
+      overflow:hidden;
+   }
+   .product_center{
+      width:768px;
+      height:525px;
+      background-size: cover;
+      background-position: center center;
+      background:url("../img/product/product_index/introduce_smallbg.jpg") rgb(35, 11, 44);
+      background-repeat: no-repeat;
+      position: absolute;
+      left:50%;
+      margin-left: -384px;
+   }
+   .product_introduce_caption{
+      margin:255px auto 0 auto !important;
+   }
+}
+.introduceApear{
+   margin-left: 5%;
+   opacity:1;
+}
+.pengpengApear{
+   left:50%;
+   opacity:1;
+}
+
+
+/*当屏幕宽度小于960时，楼层背景图更换为小图*/
+@media screen and (max-width: 960px){
+   .product_floor1_contain>div,.product_floor2_contain>div{
+      width:50%;
+      min-height: 177px;
+      max-height:196.8px;
+   }
+   .game7,.game8,.goodgame7,.goodgame8,.game9,.game10,.goodgame9,.goodgame10{
+      display:none;
+   }
+   .product_game1,.product_game2,.product_game3,.product_game4,.product_game5,
+   .product_game6,.product_game7,.product_game8,.product_game9,.product_game10,
+   .product_goodgame1,.product_goodgame2,.product_goodgame3,.product_goodgame4,.product_goodgame5,
+.product_goodgame6,.product_goodgame7,.product_goodgame8,.product_goodgame9,.product_goodgame10{
+      height: 100%;
+      background-size: 343.75px 250px!important;
+      background-position: 100% 50%!important;
+      background-repeat: no-repeat!important;
+      padding:20px;
+   }
+   .product_game1{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(102, 106, 109) 85%, rgb(102, 106, 109) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(102, 106, 109) 95%,
+              rgb(102, 106, 109) 100%),
+      url("../img/product/product_index/product_sm_game1.jpg") rgb(102, 106, 109);
+   }
+   .product_game2{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+   rgb(39, 29, 54) 85%, rgb(39, 29, 54) 100%),
+   linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(39, 29, 54) 95%,
+   rgb(39, 29, 54) 100%),
+      url("../img/product/product_index/product_sm_game2.jpg") rgb(39, 29, 54);
+   }
+   .product_game3{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(31, 32, 36) 85%, rgb(31, 32, 36) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(31, 32, 36) 95%,
+              rgb(31, 32, 36) 100%),
+      url("../img/product/product_index/product_sm_game3.jpg") rgb(31, 32, 36);
+   }
+   .product_game4{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(115, 122, 149) 85%, rgb(115, 122, 149) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(115, 122, 149) 95%,
+              rgb(115, 122, 149) 100%),
+      url("../img/product/product_index/product_sm_game4.jpg") rgb(115, 122, 149);
+   }
+   .product_game5{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(32, 40, 45) 85%, rgb(32, 40, 45) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(32, 40, 45) 95%,
+              rgb(32, 40, 45) 100%),
+      url("../img/product/product_index/product_sm_game5.jpg") rgb(32, 40, 45);
+   }
+   .product_game6{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(27, 13, 53) 85%, rgb(27, 13, 53) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(27, 13, 53) 95%,
+              rgb(27, 13, 53) 100%),
+      url("../img/product/product_index/product_sm_game6.jpg") rgb(27, 13, 53);
+   }
+   .product_goodgame1{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(102, 106, 109) 85%, rgb(102, 106, 109) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(102, 106, 109) 95%,
+              rgb(102, 106, 109) 100%),
+      url("../img/product/product_index/product_sm_game1.jpg") rgb(102, 106, 109);
+   }
+   .product_goodgame2{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(0, 44, 83) 85%, rgb(0, 44, 83) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(0, 44, 83) 95%,
+              rgb(0, 44, 83) 100%),
+      url("../img/product/product_index/product_sm_goodgame2.jpg") rgb(0, 44, 83);
+   }
+   .product_goodgame3{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(32, 25, 38) 85%, rgb(32, 25, 38) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(32, 25, 38) 95%,
+              rgb(32, 25, 38) 100%),
+      url("../img/product/product_index/product_sm_game9.jpg") rgb(32, 25, 38);
+   }
+   .product_goodgame4{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(33, 25, 37) 85%, rgb(33, 25, 37) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(33, 25, 37) 95%,
+              rgb(33, 25, 37) 100%),
+      url("../img/product/product_index/product_sm_game10.jpg") rgb(33, 25, 37);
+   }
+   .product_goodgame5{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(18, 18, 20) 85%, rgb(18, 18, 20) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(18, 18, 20) 95%,
+              rgb(18, 18, 20) 100%),
+      url("../img/product/product_index/product_sm_game4.jpg") rgb(18, 18, 20);
+   }
+   .product_goodgame6{
+      background:linear-gradient(to left, rgba(0, 0, 0, 0) 60%,
+      rgb(31, 32, 36) 85%, rgb(31, 32, 36) 100%),
+      linear-gradient(rgba(0, 0, 0, 0) 150px, rgb(31, 32, 36) 95%,
+              rgb(31, 32, 36) 100%),
+      url("../img/product/product_index/product_sm_game7.jpg") rgb(31, 32, 36);
+   }
+   .middleLogo{
+      width:30px;
+      height:30px;
+   }
+   .product_floor1_contain a li div,.product_floor2_contain a li div{
+      width:100%;
+      height:30px !important;
+      margin-bottom: 2px;
+   }
+   .product_floor1_contain a li .product_game_title,.product_floor2_contain a li .product_game_title{
+      font-size: 15px;
+      /*margin-bottom: 8px;*/
+      min-height: 20px;
+      max-width: 151px;
+   }
+   .product_floor1_contain a li .product_secondTitle,.product_floor2_contain a li .product_secondTitle{
+      font-size: 12px;
+      margin-bottom: 0;
+      min-height: 14px;
+   }
+   .product_floor1_contain a li .grayTitle,.product_floor2_contain a li .grayTitle{
+      font-size: 12px;
+      margin-bottom: 0;
+      min-height: 14px !important;
+      height: 14px !important;
+   }
+   .product_floor1_contain a li .product_price,.product_floor2_contain a li .product_price{
+      margin-top: 9px;
+      margin-bottom: 0;
+      height:22.4px;
+      font-size: 14px;
+   }
+}
+@media screen and (max-width: 599px) {
+   .product_floor1_contain > div, .product_floor2_contain > div {
+      width: 100%;
+      min-height: 177px;
+      max-height: 196.8px;
+   }
+
+   .game7, .game8, .goodgame7, .goodgame8, .game9, .game10, .goodgame9, .goodgame10 {
+      display: none;
+   }
 }
 
 

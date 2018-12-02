@@ -179,3 +179,9 @@ a:hover{
     border-top: 0.2px solid rgba(225,225,225,0.3);
     border-bottom: 0.2px solid rgba(225,225,225,0.3);
 }
+.grayborderT{
+    border-top: 0.3px solid rgba(225,225,225,0.3);
+}
+.grayborderB{
+    border-bottom: 0.3px solid rgba(225,225,225,0.3);
+}
