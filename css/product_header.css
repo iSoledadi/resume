@@ -204,6 +204,9 @@
 .header-nav-select-match2 li{
     opacity:0;
 }
+.small_nav{
+    background: url("../img/product/product_index/product_main_bg.png") top center no-repeat;
+}
 .select2In{
     width:100%;
     min-height: 324px;

@@ -185,3 +185,6 @@ a:hover{
 .grayborderB{
     border-bottom: 0.3px solid rgba(225,225,225,0.3);
 }
+.grayColor{
+    color:rgba(255,255,255,0.8);
+}
