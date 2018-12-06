@@ -132,7 +132,7 @@ body{
       transform: translateX(0);
    }
    80%{
-      transform: translateX(40px);
+      transform: translateX(80px);
    }
    100%{
       transform: translateX(0px);
@@ -326,14 +326,20 @@ body{
    /*margin-bottom: 15px;*/
 }
 .my_game_content_bottom{
-   width:1289px;
+   /*width:1289px;*/
+   width:100%;
    height: 240px;
    font-size: 18px;
    overflow: hidden;
    /*margin-left: 534px;*/
 }
-.game_content_bottom_kuang{
-   width:1289px;
+#my_game_content_bottom{
+   width:800%;
+   float:left;
+}
+.game_content_bottom_kuang,.game_content_bottom_kuang2{
+   /*width:1289px;*/
+   width:1719px;
    height: 240px;
    font-size: 18px;
    transition:all 1s ease;
@@ -347,6 +353,7 @@ body{
    left:10px;
    background:rgba(0,0,0,0.6);
    border-radius: 5px;
+   z-index: 10010;
 }
 .leftJianTou:hover{
    background:rgba(10,161,237,0.9);
@@ -359,6 +366,7 @@ body{
    right:10px;
    background:rgba(0,0,0,0.6);
    border-radius: 5px;
+   z-index: 10010;
 }
 .rightJianTou:hover{
    background:rgba(10,161,237,0.9);

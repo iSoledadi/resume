@@ -24,19 +24,35 @@
       </h1>
       <!-- 注册信息-->
       <div class="login_input">
-         <ul class="login_input_ul list-unstyled d-flex flex-column justify-content-between text-center">
-            <li><input class="w-100 h-100" type="email" placeholder="电子邮箱"/></li>
-            <li><input class="w-100 h-100" type="password" placeholder="密码"/></li>
-            <li><a class="selectButton w-100 h-100" href="##">登录</a></li>
-            <li><span class="login_line">———————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或使用以下账号登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————————</span></li>
-            <li><a class="selectButton redButton w-100" href="##">使用网易通行证登录</a></li>
-            <li class="login_input_bottom">
-               <a class="blue_href needResign" href="##">免费创建暴雪游戏通行证</a>
-            </li>
-            <li class="login_input_bottom"><a class="blue_href" href="##">无法登录？</a></li>
-            <li class="login_input_bottom"><a class="blue_href" href="##">安全令重新同步</a></li>
-         </ul>
+         <form action="#">
+            <ul class="login_input_ul list-unstyled d-flex flex-column justify-content-between text-center">
+               <li class="alertkuang">12356</li>
+               <li><input class="w-100 h-100 user_email" type="text" placeholder="电子邮箱"/></li>
+               <li><input class="w-100 h-100" type="password" placeholder="密码"/></li>
+               <li><input type="submit" class="selectButton w-100 h-100" value="登录"></li>
+               <li><span class="login_line">———————&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或使用以下账号登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;————————</span></li>
+               <li><a class="selectButton redButton w-100" href="##">使用网易通行证登录</a></li>
+               <li class="login_input_bottom">
+                  <a class="blue_href needResign" href="##">免费创建暴雪游戏通行证</a>
+               </li>
+               <li class="login_input_bottom"><a class="blue_href" href="##">无法登录？</a></li>
+               <li class="login_input_bottom"><a class="blue_href" href="##">安全令重新同步</a></li>
+            </ul>
+         </form>
       </div>
+
+      <script>
+         $(".selectButton").click(function(){
+            var reg=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+            var val=$(".user_email").val();
+            if(!val){
+               $(".alertkuang").show().html("请输入账号");
+            }else if(!reg.test(val)){
+               $(".alertkuang").show().html("邮箱格式有误");
+            }
+
+         })
+      </script>
 
       <!-- 注册底部-->
       <div class="login_footer">

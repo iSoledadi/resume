@@ -88,8 +88,8 @@ a:hover{
 .selectButton{
     display: inline-block;
     position: relative;
-    background-color: #0e86ca;
-    border: solid 1px #00aeff;
+    background-color: #0e86ca!important;
+    border: solid 1px #00aeff!important;
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
@@ -104,7 +104,7 @@ a:hover{
     transition: color 200ms, background-color 200ms, border-color 200ms;
 }
 .selectButton:hover{
-    background-color: #00aeff;
+    background-color: #00aeff!important;
     text-decoration: none;
     color: #fff;
 }

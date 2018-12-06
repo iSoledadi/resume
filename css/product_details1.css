@@ -129,7 +129,8 @@
     display:none;
     position:fixed;
     top:10px;
-   left:5%;
+   left:64%;
+    margin-left: -50%;
     z-index: 10010;
 }
 .product_detail_video>div{

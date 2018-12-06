@@ -17,7 +17,7 @@ body{
 }
 .login_bg{
    width:1920px;
-   height:903px;
+   min-height:903px;
    position: absolute;
    left:50%;
    margin-left:-960px;
@@ -27,7 +27,7 @@ body{
 }
 .login_content{
    width:85%;
-   height:903px;
+   min-height:903px;
    margin: 0 auto;
 }
 
@@ -36,12 +36,12 @@ body{
 }
 .login_input{
    width:100%;
-   height:353px;
+   min-height:353px;
    margin:0 auto 120px auto;
 }
 .login_input_ul{
    width:360px;
-   height:353px;
+   min-height:353px;
    margin: 0 auto;
 }
 .login_input_ul input{
@@ -57,12 +57,41 @@ body{
    line-height: 40px;
    margin:5px 0 0 0;
 }
+.alertkuang{
+   width:100%;
+   height:42px;
+   margin-bottom: 10px !important;
+   padding:10px 20px 10px 49px;
+   border: 1px solid #000;
+   background:#360e10;
+   box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0,0,0,0.75);
+   position:relative;
+   line-height: 21px!important;
+   color:rgba(255,255,255,0.7);
+   text-align: left;
+   display:none;
+}
+.alertkuang:before{
+   content: "";
+   display: block;
+   position: absolute;
+   top: 8px;
+   left: 14px;
+   width: 24px;
+   height: 24px;
+   overflow: hidden;
+   line-height: 24px;
+   vertical-align: top;
+   text-indent: -9999px;
+   background-image: url("../img/login/login_icon.png");
+   background-position: -24px 0;
+}
 .redButton{
-   background-color: #d60000;
-   border:none;
+   background-color: #d60000!important;
+   border:none!important;
 }
 .redButton:hover{
-   background-color: #f70e0e;
+   background-color: #f70e0e!important;
    border:none;
 }
 .selectButton{
